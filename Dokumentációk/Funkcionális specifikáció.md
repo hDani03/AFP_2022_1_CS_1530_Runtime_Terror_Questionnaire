@@ -43,5 +43,18 @@ Megrendelőnk szeretné lecserélni a papír alapú rendszerét egy modernebb v�
 
 ## 7. Képernyőtervek
 
+## 8. Forgatókönyvek
 
+**Admin szemszögéből**: Az admin bejelentkezését követően lehetősége lesz a kérdőívek módosítására, mind a címére, a válaszokra, illetve magára a kérdésekre vonatkozóan. Továbbá az adminnak lehetősége lesz kérdőívek és kérdések törlésére is, illetve a statisztikai eredmények szemrevételezésére.
+
+**Vendég szemszögéből**: A vendég az alapadatai megadását követően kitölti az általa választott kérdőívet, kitöltést követően az eredmények adatai bekerülnek egy adatbázisba.
+
+**Rendszeres felhasználó**: Az oldal azon regisztrált felhasználói akik a kérdőíveket létre tudják hozni.
+
+
+**Autentikáció**: - Hitelesítés.
+
+**Reszponzív**: A weboldal méretezése automatikusan igazodik ahhoz az eszközhöz amin épp használják.
+
+**Framework**: Keretrendszer. Ebben az esetben a projekt hatékonyabb fejlesztését szolgálja.
 
