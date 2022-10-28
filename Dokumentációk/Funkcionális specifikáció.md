@@ -11,3 +11,16 @@ Egy olyan webalkalmazást fejlesztünk megrendelőnk részére, amely segítség
 ## 2. Jelenlegi helyzet
 
 A megrendelő szeretné leváltani a papír alapú kérdőíveit annak környezetkárosító hatásai miatt, illetve ílymódon, nagyobb réteget tud elérni. A web-es felületnek köszönhetően pedig a kérdőívek feldolgozása is jóval leegyszerűsödik, mivel az oldal képes statisztikai kimutatásra, így, egy esetleges kutatási célzattal elindított kérdőív, a megrendelő felőli igényfelmérést is könnyedén lebonyolíthatja, például egy új termék bevezetése előtt. Ebből kifolyólag, hogy a statisztikák minél pontosabb eredményeket hozzanak, elengedhetetlen hogy minél több eszközön elérhető legyen, amit oly módon biztosítunk, hogy egy reszponzív web-es felületet hozunk létre. A megrendelő ezért ragaszkodott hozzá hogy egy PHP alapú framework-öt használjunk, ami egy tovább fejlesztést is leegyszerűsít.
+
+## 3. Követelménylista
+
+| Modul  | Id | Név | Kifejtés |
+| ------------- | ------------- | ------------- | -------------|
+| Felhasználói rendszer | K1  | Bejelentkező felület | Az oldalra be lehet lépni |
+| Felhasználói rendszer | K2  | Admin felület | A megrendelő be tud jelentkezni az oldalra |
+| Felhasználói rendszer | K3  | Jelszó módosítás | Regisztrált felhasználók tudják módosítani a jelszavukat |
+| Létrehozás | K4  | Kérdőív létrehozása | A felhasználók létre tudnak hozni új kérdőívet |
+| Módosítás | K5  | Kérdőív módosítása | A megrendelő az igényeinek megfelelően tudja módosítani a már létrehozott kérdőíveket |
+| Törlés | K6  | Kérdőív törlése | A megrendelő törölni tud egy adott kérdőívet |
+| Kitöltés | K7  | Kérdőív kitöltése | Az oldal felhasználói az igényelt adataik megadását követően kitölthetik a kérdőíveket |
+| Statisztika | K8  | Statisztika generálása | A már kitöltött kérdőívek és a felhasználók adatai alapján az oldal statisztákát készít |
