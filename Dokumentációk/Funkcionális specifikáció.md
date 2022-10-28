@@ -41,5 +41,7 @@ Megrendelőnk szeretné lecserélni a papír alapú rendszerét egy modernebb v�
 
 **Rendszeres felhasználó**: Regisztrált felhasználó aki a bejelentkezést követően kitöltheti bármely kérdőívet, illetve készíthet is. 
 
+## 7. Képernyőtervek
+
 
 
