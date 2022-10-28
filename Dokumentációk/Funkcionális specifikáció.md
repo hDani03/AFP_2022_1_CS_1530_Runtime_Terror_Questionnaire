@@ -29,4 +29,6 @@ A megrendelő szeretné leváltani a papír alapú kérdőíveit annak környeze
 
 Ügyfelünk jelenleg a kérdőíveit papír alapú formában használja, ami nem kevés nyomtatási költséggel jár, és idővel, ami alatt megszerkesztik azokat, illetve a hatékonyságot illetően, az hogy postai úton célba kell juttatni mindet, nem kevés logisztikát igényel. Ez természetesen az célcsoport szempontjából sem túl eredményes, nem beszélve arról, hogy ílymódon jelentős számú adattól esik el, mivel nem tud egyszerre szélesebb kört megszólítani.
 
+## 5. Igényelt üzleti folyamatok modellje
 
+Megrendelőnk szeretné lecserélni a papír alapú rendszerét egy modernebb változatra, így a kérésére egy olyan weboldalt fejlesztünk, amely segítségével gyorsan és hatékonyan képes szélesebb kört elérni. Oly módon hogy a web-es felületen keresztül a felhasználók által kitöltött kérdőívekből az oldal statisztikát készít, amit az ügyfél azonnal láthat.
