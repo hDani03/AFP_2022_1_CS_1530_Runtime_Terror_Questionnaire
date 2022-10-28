@@ -24,3 +24,9 @@ A megrendelő szeretné leváltani a papír alapú kérdőíveit annak környeze
 | Törlés | K6  | Kérdőív törlése | A megrendelő törölni tud egy adott kérdőívet |
 | Kitöltés | K7  | Kérdőív kitöltése | Az oldal felhasználói az igényelt adataik megadását követően kitölthetik a kérdőíveket |
 | Statisztika | K8  | Statisztika generálása | A már kitöltött kérdőívek és a felhasználók adatai alapján az oldal statisztákát készít |
+
+## 4. Jelenlegi üzleti folyamatok modellje
+
+Ügyfelünk jelenleg a kérdőíveit papír alapú formában használja, ami nem kevés nyomtatási költséggel jár, és idővel, ami alatt megszerkesztik azokat, illetve a hatékonyságot illetően, az hogy postai úton célba kell juttatni mindet, nem kevés logisztikát igényel. Ez természetesen az célcsoport szempontjából sem túl eredményes, nem beszélve arról, hogy ílymódon jelentős számú adattól esik el, mivel nem tud egyszerre szélesebb kört megszólítani.
+
+
