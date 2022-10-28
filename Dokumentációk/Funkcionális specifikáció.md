@@ -51,8 +51,9 @@ Megrendelőnk szeretné lecserélni a papír alapú rendszerét egy modernebb v�
 
 **Rendszeres felhasználó**: Az oldal azon regisztrált felhasználói akik a kérdőíveket létre tudják hozni.
 
+## Fogalomszótár
 
-**Autentikáció**: - Hitelesítés.
+**Autentikáció**: Hitelesítés.
 
 **Reszponzív**: A weboldal méretezése automatikusan igazodik ahhoz az eszközhöz amin épp használják.
 
