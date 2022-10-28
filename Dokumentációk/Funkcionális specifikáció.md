@@ -32,3 +32,14 @@ A megrendelő szeretné leváltani a papír alapú kérdőíveit annak környeze
 ## 5. Igényelt üzleti folyamatok modellje
 
 Megrendelőnk szeretné lecserélni a papír alapú rendszerét egy modernebb változatra, így a kérésére egy olyan weboldalt fejlesztünk, amely segítségével gyorsan és hatékonyan képes szélesebb kört elérni. Oly módon hogy a web-es felületen keresztül a felhasználók által kitöltött kérdőívekből az oldal statisztikát készít, amit az ügyfél azonnal láthat.
+
+## 6. Használati esetek
+
+**Admin**: Az adminnak teljes rálátása van az alkalmazásra, hozzáfér a kérdőívekhez illetve a regisztrált felhasználókhoz melyek adatait módosíthatja, lehetősége van új kérdőív felvételére módosításra és törlésre is. Hozzáférése van továbbá a statisztikai adatokhoz.
+
+**Vendég**: Nem regisztrált felhasználó aki az éppen aktuális kérdőívet töltheti ki az alapadatai megadását követően. 
+
+**Rendszeres felhasználó**: Regisztrált felhasználó aki a bejelentkezést követően kitöltheti bármely kérdőívet, illetve készíthet is. 
+
+
+
