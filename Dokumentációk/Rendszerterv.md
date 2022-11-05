@@ -87,3 +87,10 @@ Az adatbázis, amit használ a weboldal, MySql segítségével lett létrehozva
 
 ## 9. Implementációs terv
 Weboldalunk elkészítéséhez a html, css, php-ben készült, projektünk elkésztésének megkönnyítése céljából laravel keretrendszert használtunk, ennek a keretrendszernek köszönhetően a fájloknak, amikbe dolgozunk, rendszerezésén könnyebben megoldottuk
+
+## 10. Tesztterv
+
+A tesztelések célja a rendszer és komponensei funkcionalitásának teljes vizsgálata,
+ellenőrzése a rendszer által megvalósított üzleti szolgáltatások verifikálása.
+A teszteléseket a fejlesztői csapat minden tagja elvégzi.
+Egy teszt eredményeit a tagok dokumentálják külön fájlokba.
