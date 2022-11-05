@@ -28,3 +28,6 @@ A rendszer egy online kérdőív kitöltő weboldal, ahol a regisztrált felhasz
 
 ### 2.4 Mérföldkövek:
    * Prototípus átadása
+
+## 3. Üzleti folyamatok modellje
+![https://imgur.com/a/L3jgbGt](https://imgur.com/a/L3jgbGt)
