@@ -82,4 +82,5 @@ A web alkalmazás Laravel keretrendszer használatával készül el.
 ### Adatbázis rendszer
 Az adatbázis, amit használ a weboldal, MySql segítségével lett létrehozva
 
-
+## 8. Adatbázis terv
+![https://imgur.com/a/059Rls9.png](https://imgur.com/a/059Rls9.png)
