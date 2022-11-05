@@ -63,3 +63,15 @@ Admin: Tudja kezelni az adatbázist, a felhasználók adatait, és mindent tud a
   - Kérdőív keresése
   - Lapozórendszer
   - Kijelentkezés
+
+## 6. Fizikai környezet
+A projekt kizárólag webes felületre készült, csakis böngészőből lehet megnyitni
+
+### Vásárolt softwarekomponensek és külső rendszerek
+Nincsenek megvásárolt softwarekomponenseink és külső rendszereink
+
+### Fejlesztő eszközök
+- Notepad++
+- Visual Studio Code
+- MySql Workbench
+- Laravel Framework
