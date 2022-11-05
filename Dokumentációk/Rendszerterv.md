@@ -46,3 +46,20 @@ Lásd: Funckionális követelmények
 
 ### Támogatott eszközök
 Csak webes felületre készítjük a projektet
+
+## 5. Funkcionális terv
+
+### 5.1 Rendszerszereplők
+Vendég: Ki tudja tölteni a kérdőíveket(nincsenek adataik)
+Felhasználó: Tud létrehozni kérdőívet, és mindent amit a vendég tud
+Admin: Tudja kezelni az adatbázist, a felhasználók adatait, és mindent tud amit a felhasználó és a vendég
+
+### 5.2 Menühierarchiák
+- Bejelentkezés
+  - Bejelentkezés
+  - Regisztráció
+- Főmenü
+  - Kérdőív létrehozása
+  - Kérdőív keresése
+  - Lapozórendszer
+  - Kijelentkezés
