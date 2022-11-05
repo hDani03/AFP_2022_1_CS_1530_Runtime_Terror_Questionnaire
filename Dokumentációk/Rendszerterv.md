@@ -84,3 +84,6 @@ Az adatbázis, amit használ a weboldal, MySql segítségével lett létrehozva
 
 ## 8. Adatbázis terv
 ![https://imgur.com/a/059Rls9.png](https://imgur.com/a/059Rls9.png)
+
+## 9. Implementációs terv
+Weboldalunk elkészítéséhez a html, css, php-ben készült, projektünk elkésztésének megkönnyítése céljából laravel keretrendszert használtunk, ennek a keretrendszernek köszönhetően a fájloknak, amikbe dolgozunk, rendszerezésén könnyebben megoldottuk
