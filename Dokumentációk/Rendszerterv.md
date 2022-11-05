@@ -31,3 +31,18 @@ A rendszer egy online kérdőív kitöltő weboldal, ahol a regisztrált felhasz
 
 ## 3. Üzleti folyamatok modellje
 ![https://imgur.com/a/L3jgbGt](https://imgur.com/a/L3jgbGt)
+
+## 4. Követelmények
+
+### Funkcionális követelmények
+
+Lásd: Funckionális követelmények
+### Nemfunkcionális követelmények
+
+| ID | Megnevezés | Leírás |
+| --- | --- | --- |
+| K1 | Adat hozzáférés | Egy felhasználó/vendég nem férhet hozzá más felhasználóknak az adataihoz (a nevén kívül) |
+| K2 | Vendég szerepkör | Egy vendég nem hozhat létre kérdőívet |
+
+### Támogatott eszközök
+Csak webes felületre készítjük a projektet
