@@ -75,3 +75,11 @@ Nincsenek megvásárolt softwarekomponenseink és külső rendszereink
 - Visual Studio Code
 - MySql Workbench
 - Laravel Framework
+
+## 7. Architekturális terv
+### Webszerver
+A web alkalmazás Laravel keretrendszer használatával készül el.
+### Adatbázis rendszer
+Az adatbázis, amit használ a weboldal, MySql segítségével lett létrehozva
+
+
