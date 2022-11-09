@@ -14,3 +14,15 @@ A papír alapú kérdőívezés a 21. században elavult. Ez nagyok sok nyomtat�
 
 ##  5. Igényelt üzleti folyamatok:
 A felhasználónak nem kell regisztrálnia az oldalra, hogy kérdőíveket töltsön ki, így valószínűleg többen fogják kitölteni a kérdőívet. Nem is kell begépelni a válaszaikat, mivel minden kérdésre meglesz a 4 alap válasz. Ha a felhasználó nem töltött ki minden kérdést, a rendszer figyelmeztető üzenetet fog adni. Amikor a felhasználó az összes kérdést megválaszolta, elküldheti válaszait.
+
+## 6. Követelménylista
+| Modul | Id | Név | Kifejtés |
+| :---: | --- | --- | --- |
+| Felhasználói rendszer | K1 | Bejelentkező felület | Az oldalra be lehet lépni |
+| Felhasználói rendszer | K2 | Admin felület | A megrendelő be tud jelentkezni az oldalra |
+| Felhasználói rendszer | K3 | Jelszó módosítás | Regisztrált felhasználók tudják módosítani a jelszavukat |
+| Létrehozás | K4 | Kérdőív létrehozása | A felhasználók létre tudnak hozni új kérdőívet |
+| Módosítás | K5 | Kérdőív módosítása | A megrendelő az igényeinek megfelelően tudja módosítani a már létrehozott kérdőíveket |
+| Törlés | K6 | Kérdőív törlése | A megrendelő törölni tud egy adott kérdőívet |
+| Kitöltés | K7 | Kérdőív kitöltése | Az oldal felhasználói az igényelt adataik megadását követően kitölthetik a kérdőíveket |
+| Statisztika | K8 | Statisztika generálása | A már kitöltött kérdőívek és a felhasználók adatai alapján az oldal statisztákát készít |
