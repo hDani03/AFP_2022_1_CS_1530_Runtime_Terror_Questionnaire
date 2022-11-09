@@ -26,3 +26,6 @@ A felhasználónak nem kell regisztrálnia az oldalra, hogy kérdőíveket tölt
 | Törlés | K6 | Kérdőív törlése | A megrendelő törölni tud egy adott kérdőívet |
 | Kitöltés | K7 | Kérdőív kitöltése | Az oldal felhasználói az igényelt adataik megadását követően kitölthetik a kérdőíveket |
 | Statisztika | K8 | Statisztika generálása | A már kitöltött kérdőívek és a felhasználók adatai alapján az oldal statisztákát készít |
+
+## 7. Fogalomtár
+Reszponzív - Az adott alkalmazás a képernyő méretéhez igazodva tudja ugyanazt az látványt mutatni.
