@@ -1,7 +1,6 @@
 # Rendszerterv
 ## 1. A rendszer célja
 A rendszer egy online kérdőív kitöltő weboldal, ahol a regisztrált felhasználók létre tudnak hozni saját kérdőíveket, és a sajátjukat törölni is tudják. Egy kérdőív kitöltéséhez nem kötelező regisztrálni, de viszont a létrehozáshoz kötelező. A rendszer készít statisztikát egyes kérdőívekről, hogy adott kérdésekre az emberek hány százaléka mit válaszolt. A projekt kizárólag webes felületen elérhető, így nem célunk, hogy futtatható alkalmazás formájában is elkészítsük.
-
 ## 2. Projektterv
 
 ### 2.1 Projektszerepkörök, felelőségek:
@@ -30,8 +29,7 @@ A rendszer egy online kérdőív kitöltő weboldal, ahol a regisztrált felhasz
    * Prototípus átadása
 
 ## 3. Üzleti folyamatok modellje
-![https://imgur.com/a/L3jgbGt](https://imgur.com/a/L3jgbGt)
-
+![https://i.imgur.com/BmpVvYW.png](https://i.imgur.com/BmpVvYW.png)
 ## 4. Követelmények
 
 ### Funkcionális követelmények
@@ -43,6 +41,7 @@ Lásd: Funckionális követelmények
 | --- | --- | --- |
 | K1 | Adat hozzáférés | Egy felhasználó/vendég nem férhet hozzá más felhasználóknak az adataihoz (a nevén kívül) |
 | K2 | Vendég szerepkör | Egy vendég nem hozhat létre kérdőívet |
+| K3 |  |  |
 
 ### Támogatott eszközök
 Csak webes felületre készítjük a projektet
@@ -82,30 +81,16 @@ A web alkalmazás Laravel keretrendszer használatával készül el.
 ### Adatbázis rendszer
 Az adatbázis, amit használ a weboldal, MySql segítségével lett létrehozva
 
-## 8. Adatbázis terv
-![https://imgur.com/a/059Rls9.png](https://imgur.com/a/059Rls9.png)
 
+## 8. Adatbázis terv
+![https://i.imgur.com/BWK1QLI.png](https://i.imgur.com/BWK1QLI.png)
 ## 9. Implementációs terv
 Weboldalunk elkészítéséhez a html, css, php-ben készült, projektünk elkésztésének megkönnyítése céljából laravel keretrendszert használtunk, ennek a keretrendszernek köszönhetően a fájloknak, amikbe dolgozunk, rendszerezésén könnyebben megoldottuk
-
 ## 10. Tesztterv
 
 A tesztelések célja a rendszer és komponensei funkcionalitásának teljes vizsgálata,
 ellenőrzése a rendszer által megvalósított üzleti szolgáltatások verifikálása.
 A teszteléseket a fejlesztői csapat minden tagja elvégzi.
 Egy teszt eredményeit a tagok dokumentálják külön fájlokba.
-
-## 11. Telepítési terv
-Egy böngésző megnyitása után és a link bemásolása után mát tölthetők is ki a tesztek. Ehhez teljesen mindegy majd milyen eszközt használ a felhasználó.
-
-## 12. Karbantartási terv
-Az alkalmazásunk mindig naprakész lesz, úgy ahogy a fejlesztői csapat is. Bármilyen hiba javításával vagy új funkciók bevezetésével kapcsolatos ügyekkel kereshetnek minket.\
-Karbantartás:\
-- Adaptive Maintenance: A program mindig naprakészen tartása.\
-- Preventive maintanece: Olyan problémák elhárítása, amelyek még nem
-tűnnek fontosnak, de később komoly problémákat okozhatnak.\
-- Perfective Maintenance: A szoftver hosszútávú használata érdekében végzett
-módosítások, új funkciók, a szoftver teljesítményének és működési
-megbízhatóságának javítása.
 
 
