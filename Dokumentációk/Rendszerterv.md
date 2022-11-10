@@ -94,3 +94,6 @@ A tesztelések célja a rendszer és komponensei funkcionalitásának teljes viz
 ellenőrzése a rendszer által megvalósított üzleti szolgáltatások verifikálása.
 A teszteléseket a fejlesztői csapat minden tagja elvégzi.
 Egy teszt eredményeit a tagok dokumentálják külön fájlokba.
+
+## 11. Telepítési terv
+Egy böngésző megnyitása után és a link bemásolása után mát tölthetők is ki a tesztek. Ehhez teljesen mindegy majd milyen eszközt használ a felhasználó.
