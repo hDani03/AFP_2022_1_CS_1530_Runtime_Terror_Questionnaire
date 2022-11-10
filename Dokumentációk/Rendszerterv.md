@@ -97,3 +97,15 @@ Egy teszt eredményeit a tagok dokumentálják külön fájlokba.
 
 ## 11. Telepítési terv
 Egy böngésző megnyitása után és a link bemásolása után mát tölthetők is ki a tesztek. Ehhez teljesen mindegy majd milyen eszközt használ a felhasználó.
+
+## 12. Karbantartási terv
+Az alkalmazásunk mindig naprakész lesz, úgy ahogy a fejlesztői csapat is. Bármilyen hiba javításával vagy új funkciók bevezetésével kapcsolatos ügyekkel kereshetnek minket.\
+Karbantartás:\
+- Adaptive Maintenance: A program mindig naprakészen tartása.\
+- Preventive maintanece: Olyan problémák elhárítása, amelyek még nem
+tűnnek fontosnak, de később komoly problémákat okozhatnak.\
+- Perfective Maintenance: A szoftver hosszútávú használata érdekében végzett
+módosítások, új funkciók, a szoftver teljesítményének és működési
+megbízhatóságának javítása.
+
+
