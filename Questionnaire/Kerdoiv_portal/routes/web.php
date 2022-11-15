@@ -14,5 +14,11 @@ use App\Http\Controllers\UserController;
 |
 */
 
-// Login user
-Route::get("/", [UserController::class, "login"]);
+// Bejelentkezési form
+Route::Get("/", [UserController::class, "login"]);
+
+// User bejelentkezés (regisztrált felhasználók)
+Route::Post("/users/authenticate", [UserController::class, "authenticate"]);
+
+// User belépés (vendégek)
+Route::Post("/users/loginasguest", [UserController::class, "loginasguest"]);

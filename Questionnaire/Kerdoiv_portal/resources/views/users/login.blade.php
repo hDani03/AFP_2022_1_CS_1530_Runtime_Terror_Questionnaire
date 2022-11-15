@@ -34,9 +34,12 @@
                 <button type="submit" class="bg-cyan-600 text-white rounded py-2 px-4 hover:bg-black">
                     Bejelentkezés
                 </button>
-                <button type="submit" class="bg-cyan-600 text-white rounded py-2 px-4 hover:bg-black">
-                    Belépés vendégként
-                </button>
+
+                <form method="POST" action="/users/loginasguest">
+                    <button type="submit" class="bg-cyan-600 text-white rounded py-2 px-4 hover:bg-black">
+                        Belépés vendégként
+                    </button>
+                </form>
             </div>
 
             <div class="mt-8">
@@ -45,6 +48,12 @@
                     <a href="/register" class="text-cyan-600">Itt megteheti.</a>
                 </p>
             </div>
+
         </form>
+
+
+
+
+
     </x-card>
 </x-layout>
