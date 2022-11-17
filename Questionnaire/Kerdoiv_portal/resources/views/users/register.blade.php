@@ -61,7 +61,7 @@
             <div class="mt-8">
                 <p>
                     Van már fiókja?
-                    <a href="/login" class="text-cyan-600">Belépés</a>
+                    <a href="/" class="text-cyan-600">Belépés</a>
                 </p>
             </div>
         </form>

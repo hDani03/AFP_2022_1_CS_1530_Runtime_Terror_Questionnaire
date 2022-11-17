@@ -27,3 +27,9 @@ Route::Post("/users/loginasguest", [UserController::class, "loginasguest"]);
 
 //Show Reg Form
 Route::get('/register', [UserController::class, 'create'])->middleware('guest');
+
+//Show Login Form
+Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
+
+//Create New User
+Route::post('/users', [UserController::class, 'store']);
