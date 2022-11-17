@@ -43,6 +43,14 @@ Megrendelőnk szeretné lecserélni a papír alapú rendszerét egy modernebb v�
 
 ## 7. Képernyőtervek
 
+**Főoldal**
+
+![https://i.imgur.com/o1bCmLvl.jpg](https://i.imgur.com/o1bCmLvl.jpg)
+
+**Bejelentkező oldal**
+
+![https://i.imgur.com/sjs35JYl.jpg](https://i.imgur.com/sjs35JYl.jpg)
+
 ## 8. Forgatókönyvek
 
 **Admin szemszögéből**: Az admin bejelentkezését követően lehetősége lesz a kérdőívek módosítására, mind a címére, a válaszokra, illetve magára a kérdésekre vonatkozóan. Továbbá az adminnak lehetősége lesz kérdőívek és kérdések törlésére is, illetve a statisztikai eredmények szemrevételezésére.
