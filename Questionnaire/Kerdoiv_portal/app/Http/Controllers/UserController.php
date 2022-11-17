@@ -2,17 +2,30 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
+
+    //Show Register/Create Form
+    public function create()
+    {
+        return view('users.register');
+    }
+
+    //BEJELENTKEZÉS
+
     // Logint form
-    public function login(){
+    public function login()
+    {
         return view("users.login");
     }
 
     // User autentikációja (regisztrált felhasználók)
-    public function authenticate(Request $request){
+    public function authenticate(Request $request)
+    {
         $formField = $request->validate([
             "email" => ["required", "email"],
             "password" => "required"
@@ -28,7 +41,8 @@ class UserController extends Controller
     }
 
     // Belépés vendégként
-    public function loginasguest(){
+    public function loginasguest()
+    {
         return view("/kerdoivek")->with("message", "Vendégként lépett be.");
     }
 }

@@ -22,3 +22,8 @@ Route::Post("/users/authenticate", [UserController::class, "authenticate"]);
 
 // User belépés (vendégek)
 Route::Post("/users/loginasguest", [UserController::class, "loginasguest"]);
+
+
+
+//Show Reg Form
+Route::get('/register', [UserController::class, 'create'])->middleware('guest');
