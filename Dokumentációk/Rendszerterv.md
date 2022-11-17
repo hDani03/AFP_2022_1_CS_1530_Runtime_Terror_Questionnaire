@@ -7,6 +7,7 @@ A rendszer egy online kérdőív kitöltő weboldal, ahol a regisztrált felhasz
    * Scrum masters: Sárosi Gábor
    * Product owner: Sárosi Gábor
    * Üzleti szereplő: Futó Richárd, Huszka Dániel, Biesz Dávid
+   * Megrendelő: Bagoly Gábor
      
 ### 2.2 Projektmunkások és felelőségek:
    * Frontend: Futó Richárd, Huszka Dániel, Biesz Dávid
