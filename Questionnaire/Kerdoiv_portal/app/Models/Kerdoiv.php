@@ -12,7 +12,7 @@ class Kerdoiv extends Model
     public function scopeFilter($query, array $filters){
 
         if($filters["search"] ?? false){
-            $query->where("title", "like", "%" . request("search") . "%")
+            $query->where("cim", "like", "%" . request("search") . "%")
             ;
         }
     }
