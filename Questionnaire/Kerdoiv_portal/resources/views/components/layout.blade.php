@@ -25,10 +25,46 @@
     <title>Questionary | Kérdőívportál</title>
 </head>
 
-<body>
+<body class="mb-48">
+    <nav class="flex justify-between items-center mb-4">
+        <a href="/kerdoivek"><img class="w-24" src="{{ asset('images/logo.png') }}" alt=""
+                class="logo" /></a>
+        <ul class="flex space-x-6 mr-6 text-lg">
+            @auth
+                <li>
+                    <span class="font-bold uppercase">Üdv, {{ auth()->user()->name }}</span>
+                </li>
+
+                <li>
+                    <a href="/kerdoivek/kezeles" class="hover:text-laravel"><i class="fa-solid fa-gear"></i>
+                        Kérdőívek kezelése</a>
+                </li>
+
+                <li>
+                    <form class="inline" method="POST" action="/logout">
+                        @csrf
+                        <button type="submit">
+                            <i class="fa-solid fa-door-closed"> Kijelentkezés</i>
+                        </button>
+                    </form>
+                </li>
+            @else
+                <li>
+                    <a href="/register" class="hover:text-laravel"><i class="fa-solid fa-user-plus"></i> Regisztráció</a>
+                </li>
+                <li>
+                    <a href="/login" class="hover:text-laravel"><i class="fa-solid fa-arrow-right-to-bracket"></i>
+                        Bejelentkezés</a>
+                </li>
+            @endauth
+        </ul>
+    </nav>
+
     <main>
         {{ $slot }}
     </main>
+
+    <x-flash-message />
 </body>
 
 </html>

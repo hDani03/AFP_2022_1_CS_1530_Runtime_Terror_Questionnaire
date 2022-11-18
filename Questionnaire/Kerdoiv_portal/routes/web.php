@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\KerdoivController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,11 @@ use App\Http\Controllers\UserController;
 |
 */
 
+// Összes kérdőív mutatása
+Route::Get('/kerdoivek', [KerdoivController::class, "index"]);
+
+
+
 // Bejelentkezési form
 Route::Get("/", [UserController::class, "login"]);
 
@@ -25,11 +31,14 @@ Route::Post("/users/loginasguest", [UserController::class, "loginasguest"]);
 
 
 
-//Show Reg Form
+// Regisztrációs form
 Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 
-//Show Login Form
+// Bejelentkezési form
 Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
 
-//Create New User
+// Új felhasználó regisztrálása
 Route::post('/users', [UserController::class, 'store']);
+
+// Felhasználó kijelentkezés
+Route::post("/logout", [UserController::class, "logout"])->middleware("auth");

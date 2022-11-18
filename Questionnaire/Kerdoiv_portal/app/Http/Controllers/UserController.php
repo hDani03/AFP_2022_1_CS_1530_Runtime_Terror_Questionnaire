@@ -38,6 +38,16 @@ class UserController extends Controller
 
     //BEJELENTKEZÉS
 
+    // Felhasználó kijelentkeztetése
+    public function logout(Request $request){
+        auth()->logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+    
+        return redirect("/")->with("message", "Sikeres kijelentkezés!");
+    }
+
     // Logint form
     public function login()
     {
