@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\KerdoivController;
+use App\Http\Controllers\SurveyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,30 +15,48 @@ use App\Http\Controllers\KerdoivController;
 |
 */
 
-// Összes kérdőív mutatása
-Route::Get('/kerdoivek', [KerdoivController::class, "index"]);
+// ÁLTALÁNOS ERŐFORRÁS ÚTVONALAK:
+// index - Összes kérdőív mutatása
+// show - Egy kérdőív mutatása
+// create - Kérdőív létrehozás form mutatása
+// store - Új kérdőív tárolása
+// edit - Kérdőív módosítás form mutatása
+// update - Kérdőív frissítése
+// destroy - Kérdőív törlése
+
+
+// KÉRDŐÍVEKKEL KAPCSOLATOS ÚTVONALAK
+
+// Összes kérdőív listázása
+Route::get('/', [SurveyController::class, 'index']);
 
 
 
-// Bejelentkezési form
-Route::Get("/", [UserController::class, "login"]);
+// FELHASZNÁLÓVAL KAPCSOLATOS ÚTVONALAK
 
-// User bejelentkezés (regisztrált felhasználók)
-Route::Post("/users/authenticate", [UserController::class, "authenticate"]);
-
-// User belépés (vendégek)
-Route::Post("/users/loginasguest", [UserController::class, "loginasguest"]);
-
-
-
-// Regisztrációs form
+// Regisztrációs form megjelenítése
 Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 
-// Bejelentkezési form
-Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
-
-// Új felhasználó regisztrálása
+// Új felhasználó létrehozása
 Route::post('/users', [UserController::class, 'store']);
 
-// Felhasználó kijelentkezés
-Route::post("/logout", [UserController::class, "logout"])->middleware("auth");
+// Felhasználó kijelentkeztetése
+Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
+
+// Bejelentkező form megjelenítése
+Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
+
+// Felhasználó bejelentkeztetés
+Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+
+
+
+
+
+
+
+
+
+
+// Egy kérdőív listázása (legalul van a helye)
+Route::get('/surveys/{survey}', [SurveyController::class, 'show']);
