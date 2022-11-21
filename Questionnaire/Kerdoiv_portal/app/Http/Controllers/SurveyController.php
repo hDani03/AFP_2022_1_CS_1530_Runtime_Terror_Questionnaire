@@ -27,4 +27,11 @@ class SurveyController extends Controller
         ]);
         
     }
+
+    // Egy kérdőív mutatása
+    public function show(Survey $survey){
+        return view('surveys.show', [
+            'survey' => $survey
+        ]);
+    }
 }
