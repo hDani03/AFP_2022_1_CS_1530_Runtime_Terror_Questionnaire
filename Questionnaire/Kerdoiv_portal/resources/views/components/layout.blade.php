@@ -27,8 +27,9 @@
 
 <body class="mb-48">
     <nav class="flex justify-between items-center mb-4">
-        <a href="/kerdoivek"><img class="w-24" src="{{ asset('images/logo.png') }}" alt=""
-                class="logo" /></a>
+        <a href="/">
+            <img class="w-24" src="{{ asset('images/logo.png') }}" alt="" class="logo" />
+        </a>
         <ul class="flex space-x-6 mr-6 text-lg">
             @auth
                 <li>
@@ -36,7 +37,7 @@
                 </li>
 
                 <li>
-                    <a href="/kerdoivek/kezeles" class="hover:text-laravel"><i class="fa-solid fa-gear"></i>
+                    <a href="/surveys/manage" class="hover:text-laravel"><i class="fa-solid fa-gear"></i>
                         Kérdőívek kezelése</a>
                 </li>
 
@@ -44,7 +45,7 @@
                     <form class="inline" method="POST" action="/logout">
                         @csrf
                         <button type="submit">
-                            <i class="fa-solid fa-door-closed"> Kijelentkezés</i>
+                            <i class="fa-solid fa-door-closed"></i> Kijelentkezés
                         </button>
                     </form>
                 </li>
@@ -61,8 +62,19 @@
     </nav>
 
     <main>
+        {{-- VIEW OUTPUT --}}
+        {{-- @yield('content') --}}
         {{ $slot }}
     </main>
+
+
+    <footer
+        class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold bg-cyan-600 text-white h-20 mt-20 opacity-90 md:justify-center">
+        <p class="ml-2">AFP I. gy. Runtime Terror csapat projektje</p>
+
+        <a href="/surveys/create" class="absolute top-1/3 right-10 bg-black text-white py-2 px-5"> Kérdőív létrehozása
+        </a>
+    </footer>
 
     <x-flash-message />
 </body>

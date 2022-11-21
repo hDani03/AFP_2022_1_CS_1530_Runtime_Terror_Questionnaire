@@ -3,15 +3,15 @@
     <x-card class="p-10 max-w-lg mx-auto mt-24">
         <header class="text-center">
             <h2 class="text-2xl font-bold uppercase mb-1">
-                Bejelentkezés/Belépés vendégként
+                Bejelentkezés
             </h2>
+            <p class="mb-4">Belépés a fiókjába</p>
         </header>
 
         <form method="POST" action="/users/authenticate">
             @csrf
-
             <div class="mb-6">
-                <label for="email" class="inline-block text-lg mb-2">E-mail cím</label>
+                <label for="email" class="inline-block text-lg mb-2"> Email </label>
                 <input type="email" class="border border-gray-200 rounded p-2 w-full" name="email"
                     value="{{ old('email') }}" />
                 @error('email')
@@ -34,26 +34,14 @@
                 <button type="submit" class="bg-cyan-600 text-white rounded py-2 px-4 hover:bg-black">
                     Bejelentkezés
                 </button>
-
-                <form method="POST" action="/users/loginasguest">
-                    <button type="submit" class="bg-cyan-600 text-white rounded py-2 px-4 hover:bg-black">
-                        Belépés vendégként
-                    </button>
-                </form>
             </div>
 
             <div class="mt-8">
                 <p>
-                    Szeretne regisztrálni?
-                    <a href="/register" class="text-cyan-600">Itt megteheti.</a>
+                    Nincs fiókja?
+                    <a href="/register" class="text-cyan-600">Regisztráció</a>
                 </p>
             </div>
-
         </form>
-
-
-
-
-
     </x-card>
 </x-layout>
