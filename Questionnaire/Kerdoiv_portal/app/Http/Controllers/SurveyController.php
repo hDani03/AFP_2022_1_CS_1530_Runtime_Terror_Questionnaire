@@ -35,4 +35,9 @@ class SurveyController extends Controller
             'survey' => $survey
         ]);
     }
+
+    // Kérdőív létrehozása form mutatása
+    public function create(){
+        return view('surveys.create');
+    }
 }
