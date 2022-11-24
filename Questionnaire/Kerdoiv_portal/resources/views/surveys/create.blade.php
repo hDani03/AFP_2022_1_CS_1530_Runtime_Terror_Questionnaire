@@ -38,21 +38,22 @@
 
                 {{-- Dinamikus input mezők generálása --}}
                 <div class="question_answers_container" id="questions_answers">
-                    <div class="kerdes_item pt-7 pb-7">
+                    <div class="kerdes_item pt-7 pb-7 w-full">
                         <label for="kerdes" class="inline-block text-lg mb-2"> Kérdés
                             <input class="border border-gray-200 rounded p-2 w-full" type="text"
                                 name="kerdes"></input>
                         </label>
                         <button type="button"
                             class="bg-red-600 text-white text-xl rounded py-2 px-6 hover:bg-black float-right mt-5 fa-solid fa-trash"
-                            id="remove_question_btn"></button>
+                            id="remove_question_btn">
+                        </button>
                     </div>
 
                     <label for="valasz1" class="inline-block text-lg mb-2"> 1. válasz
                         <input class="border border-gray-200 rounded p-2 w-full" type="text" name="valasz1"></input>
                     </label>
 
-                    <label for="valasz2" class="inline-block text-lg mb-2"> 2. válasz
+                    <label for="valasz2" class="inline-block text-lg mb-2 float-right"> 2. válasz
                         <input class="border border-gray-200 rounded p-2 w-full" type="text" name="valasz2"></input>
                     </label>
 
@@ -60,7 +61,7 @@
                         <input class="border border-gray-200 rounded p-2 w-full" type="text" name="valasz3"></input>
                     </label>
 
-                    <label for="valasz4" class="inline-block text-lg mb-2"> 4. válasz
+                    <label for="valasz4" class="inline-block text-lg mb-2 float-right"> 4. válasz
                         <input class="border border-gray-200 rounded p-2 w-full" type="text" name="valasz4"></input>
                     </label>
 
@@ -78,3 +79,15 @@
         </form>
     </div>
 </x-layout>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#add_question_btn').on('click', function() {
+            var html = '';
+            html +=
+                '<div class="kerdes_item pt-7 pb-7"><label for="kerdes" class="inline-block text-lg mb-2"> Kérdés<input class="border border-gray-200 rounded p-2 w-full" type="text" name="kerdes"></input></label><button type="button" class="bg-red-600 text-white text-xl rounded py-2 px-6 hover:bg-black float-right mt-5 fa-solid fa-trash" id="remove_question_btn"></button></div><label for="valasz1" class="inline-block text-lg mb-2"> 1. válasz<input class="border border-gray-200 rounded p-2 w-full" type="text" name="valasz1"></input></label><label for="valasz2" class="inline-block text-lg mb-2"> 2. válasz<input class="border border-gray-200 rounded p-2 w-full" type="text" name="valasz2"></input></label><label for="valasz3" class="inline-block text-lg mb-2"> 3. válasz<input class="border border-gray-200 rounded p-2 w-full" type="text" name="valasz3"></input></label><label for="valasz4" class="inline-block text-lg mb-2"> 4. válasz<input class="border border-gray-200 rounded p-2 w-full" type="text" name="valasz4"></input></label>';
+        })
+
+        $('#questions_answers').append(html);
+    });
+</script>
