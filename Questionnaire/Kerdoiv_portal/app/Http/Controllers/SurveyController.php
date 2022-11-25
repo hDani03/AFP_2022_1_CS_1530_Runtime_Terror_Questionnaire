@@ -12,8 +12,7 @@ class SurveyController extends Controller
     public function index(){
         if (Auth::check()) {
             return view('surveys.index', [
-                'surveys' => Survey::latest()->filter(request(['search']))->paginate(6) 
-                //paginate()->lastItem() regisztrálatlan felhasználóknak
+                'surveys' => Survey::latest()->filter(request(['search']))->paginate()->withQueryString()
             ]);
         }else {
             return view('surveys.index', [
