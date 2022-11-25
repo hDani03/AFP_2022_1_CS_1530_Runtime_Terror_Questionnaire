@@ -4,29 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Models\Survey;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SurveyController extends Controller
 {
     // Összes kérdőív mutatása
     public function index(){
-        // Lehet nem itt kellene
-        // if (Auth::check()) {
-        //     return view('surveys.index', [
-        //         'surveys' => Survey::latest()->filter(request(['search']))->paginate(6) 
-        //         //paginate()->lastItem() regisztrálatlan felhasználóknak
-        //     ]);
-        // }else {
-        //     return view('surveys.index', [
-        //         'surveys' => Survey::latest()->filter(request(['search']))->paginate()->lastItem()
-        //         //paginate()->lastItem() regisztrálatlan felhasználóknak
-        //     ]);
-        // }
-
-        return view('surveys.index', [
-            'surveys' => Survey::latest()->filter(request(['search']))->paginate(6)
-            //paginate()->lastItem() regisztrálatlan felhasználóknak
-        ]);
-        
+        if (Auth::check()) {
+            return view('surveys.index', [
+                'surveys' => Survey::latest()->filter(request(['search']))->paginate(6) 
+                //paginate()->lastItem() regisztrálatlan felhasználóknak
+            ]);
+        }else {
+            return view('surveys.index', [
+                'surveys' => Survey::latest()->first()
+            ]);
+        }  
     }
 
     // Egy kérdőív mutatása
