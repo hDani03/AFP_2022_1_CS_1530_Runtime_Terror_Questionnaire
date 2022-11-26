@@ -30,6 +30,9 @@ use App\Http\Controllers\SurveyController;
 // Összes kérdőív listázása
 Route::get('/', [SurveyController::class, 'index']);
 
+// Kérdőív létrehozása
+Route::post('/surveys', [SurveyController::class, 'store'])->middleware('auth');
+
 // Kérdőív létrehozása form megjelenítése
 Route::get('/surveys/create', [SurveyController::class, 'create'])->middleware('auth');
 
