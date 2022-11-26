@@ -28,13 +28,15 @@ class SurveyController extends Controller
     public function store(Request $request)
     {
         $dt = new DateTime(now());
+        $statement  = DB::select("SHOW TABLE STATUS LIKE 'surveys'");
+        $nextSurveyId = $statement[0]->Auto_increment;
         $formFields = $request->validate([
             'cim' => 'required',
             'leiras' => 'required',
         ]);
-
         DB::table('surveys')->insert(
             array(
+                'survey_id' => $nextSurveyId,
                 'user_id' => auth()->id(), 
                 'cim' => $formFields['cim'], 
                 'rovid_leiras' => $formFields['leiras'],
@@ -43,6 +45,7 @@ class SurveyController extends Controller
                 )
         );
         return redirect('/')->with('message', 'A kérdőív sikeresen létrehozva!');
+        
     }
 
     // Egy kérdőív mutatása
