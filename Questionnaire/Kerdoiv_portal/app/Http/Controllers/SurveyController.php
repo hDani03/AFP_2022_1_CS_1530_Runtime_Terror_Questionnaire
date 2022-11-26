@@ -7,6 +7,7 @@ use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Symfony\Component\Console\Question\Question;
 
 class SurveyController extends Controller
 {
@@ -44,8 +45,24 @@ class SurveyController extends Controller
                 'updated_at' => $dt
                 )
         );
+        $questions = $request['question'];
+
+        foreach($questions as $question)
+        {
+            DB::table('questions')->insert(
+                array(
+                    'survey_id' => $nextSurveyId,
+                    'user_id' => auth()->id(),
+                    'kerdes' => $question,
+                    'created_at' => $dt,
+                    'updated_at' => $dt
+                )
+            );
+        }
+
         return redirect('/')->with('message', 'A kérdőív sikeresen létrehozva!');
-        
+
+
     }
 
     // Egy kérdőív mutatása
