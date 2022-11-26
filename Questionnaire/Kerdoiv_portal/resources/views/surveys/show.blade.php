@@ -16,58 +16,54 @@
 
             <form method="POST" action=""
                 class="bg-gray-50 border border-gray-200 p-10 rounded max-w-3xl mx-auto mt-5">
-                <div class="grid grid-cols-1 divide-y">
 
-                    <h2 class="justify-center font-bold text-3xl"> 1. Kérdés </h2>
-                    <p class="justify-center font-bold text-2xl pt-5"> Ez egy kérdés? </p>
+                <div class="row grid grid-cols-10 gap-4">
 
-                    <div class="flex flex-col items-left justify-center text-center">
-                        <div class="flex-col item-stretch text-xl">
-                            <legend class="sr-only"> answers </legend>
-
-                            <div class="py-1 mt-3">
-                                <div class="flex items-center">
-                                    <input id="answer_option_1" name="answers" type="radio" value=""
-                                        class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" checked="">
-                                    <label for="option_1" class="text-lg font-medium text-gray-900 ml-2 block">
-                                        Igen
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="py-1">
-                                <div class="flex items-center">
-                                    <input id="answer_option_2" name="answers" type="radio" value=""
-                                        class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" checked="">
-                                    <label for="option_2" class="text-lg font-medium text-gray-900 ml-2 block">
-                                        Nem
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="py-1">
-                                <div class="flex items-center">
-                                    <input id="answer_option_3" name="answers" type="radio" value=""
-                                        class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" checked="">
-                                    <label for="option_3" class="text-lg font-medium text-gray-900 ml-2 block">
-                                        Villamos
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="py-1 mb-5">
-                                <div class="flex items-center">
-                                    <input id="answer_option_4" name="answers" type="radio" value=""
-                                        class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" checked="">
-                                    <label for="option_4" class="text-lg font-medium text-gray-900 ml-2 block">
-                                        Kecske
-                                    </label>
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- KÉRDÉSEK VÁLASZOK KIÍRÁSA -->
+                    <div class="col-md-4 mb-3 col-start-2 col-span-8">
+                        <h2 class="justify-center font-bold text-3xl"> 1. Kérdés </h2>
+                        <p class="justify-center font-bold text-2xl pt-5"> Mi a kedvenc színem? </p>
                     </div>
+
+                    <div class="col-md-3 mb-3 col-start-1 col-span-5">
+                        <div class="flex items-center">
+                            <input id="answer_option_1" name="answers" type="radio" value=""
+                                class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" checked="">
+                            <label for="option_1" class="text-lg font-medium text-gray-900 ml-2 block">
+                                Igen
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-3 col-start-6 col-span-5">
+                        <div class="flex items-center">
+                            <input id="answer_option_2" name="answers" type="radio" value=""
+                                class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" checked="">
+                            <label for="option_2" class="text-lg font-medium text-gray-900 ml-2 block">
+                                Nem
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-3 col-start-1 col-span-5">
+                        <div class="flex items-center">
+                            <input id="answer_option_3" name="answers" type="radio" value=""
+                                class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" checked="">
+                            <label for="option_3" class="text-lg font-medium text-gray-900 ml-2 block">
+                                Villamos
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-3 col-start-6 col-span-5">
+                        <div class="flex items-center">
+                            <input id="answer_option_4" name="answers" type="radio" value=""
+                                class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" checked="">
+                            <label for="option_4" class="text-lg font-medium text-gray-900 ml-2 block">
+                                Kecske
+                            </label>
+                        </div>
+                    </div>
+
                 </div>
                 <button type="submit" class="bg-cyan-600 text-white rounded py-2 px-4 mr-5 hover:bg-black">
                     Kérdőív leadása
