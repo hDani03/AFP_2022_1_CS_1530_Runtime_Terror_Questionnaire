@@ -8,10 +8,11 @@
 
         <form action="/surveys" method="POST">
             @csrf
+
             <div class="mb-6">
                 <label for="cim" class="inline-block text-lg mb-2"> Kérdőív címe </label>
                 <input type="text" class="border border-gray-200 rounded p-2 w-full" name="cim"
-                    value="{{ old('cim') }}" />
+                    value="{{ old('cim') }}" required />
                 @error('cim')
                     <p class="text-red-500 text-xs mt-1"> {{ $message }} </p>
                 @enderror
@@ -20,57 +21,50 @@
             <div class="mb-6">
                 <label for="leiras" class="inline-block text-lg mb-2"> Kérdőív rövid leírása </label>
                 <input type="text" class="border border-gray-200 rounded p-2 w-full" name="leiras"
-                    value="{{ old('leiras') }}" />
+                    value="{{ old('leiras') }}" required />
                 @error('leiras')
                     <p class="text-red-500 text-xs mt-1"> {{ $message }} </p>
                 @enderror
             </div>
 
-            <div class="container mb-6">
-                <div class="kerdes_container pt-7 pb-7">
-                    <label for="kerdeshozzaad" class="inline-block text-lg text-2xl mb-2"> Kérdés hozzáadása
-                    </label>
-                    <button type="button"
-                        class="bg-cyan-600 text-white text-2xl rounded py-2 px-6 hover:bg-black float-right fa-solid fa-plus"
-                        id="add_question_btn">
-                    </button>
-                </div>
+            <div id="show_question">
+                <div class="row grid grid-cols-10 gap-4">
 
-                {{-- Dinamikus input mezők generálása --}}
-                <div class="question_answers_container" id="questions_answers">
-                    <div class="kerdes_item pt-7 pb-7 w-full">
-                        <label for="kerdes" class="inline-block text-lg mb-2"> Kérdés
-                            <input class="border border-gray-200 rounded p-2 w-full" type="text"
-                                name="kerdes"></input>
-                        </label>
-                        <button type="button"
-                            class="bg-red-600 text-white text-xl rounded py-2 px-6 hover:bg-black float-right mt-5 fa-solid fa-trash"
-                            id="remove_question_btn">
-                        </button>
+                    <div class="col-md-4 mb-3 col-start-2 col-span-8">
+                        <label for="question[]" class="text-lg mb-2" id="question_counter"> Kérdés</label>
+                        <input type="text" name="question[]" class="border border-gray-200 rounded p-2 w-full"
+                            required>
                     </div>
 
-                    <label for="valasz1" class="inline-block text-lg mb-2"> 1. válasz
-                        <input class="border border-gray-200 rounded p-2 w-full" type="text" name="valasz1"></input>
-                    </label>
+                    <div class="col-md-3 mb-3 col-start-1 col-span-5">
+                        <input type="text" name="answer1[]" class="border border-gray-200 rounded p-2 w-full"
+                            placeholder="1. válasz" required>
+                    </div>
 
-                    <label for="valasz2" class="inline-block text-lg mb-2 float-right"> 2. válasz
-                        <input class="border border-gray-200 rounded p-2 w-full" type="text" name="valasz2"></input>
-                    </label>
+                    <div class="col-md-3 mb-3 col-start-6 col-span-5">
+                        <input type="text" name="answer2[]" class="border border-gray-200 rounded p-2 w-full"
+                            placeholder="2. válasz" required>
+                    </div>
 
-                    <label for="valasz3" class="inline-block text-lg mb-2"> 3. válasz
-                        <input class="border border-gray-200 rounded p-2 w-full" type="text" name="valasz3"></input>
-                    </label>
+                    <div class="col-md-3 mb-3 col-start-1 col-span-5">
+                        <input type="text" name="answer3[]" class="border border-gray-200 rounded p-2 w-full"
+                            placeholder="3. válasz" required>
+                    </div>
 
-                    <label for="valasz4" class="inline-block text-lg mb-2 float-right"> 4. válasz
-                        <input class="border border-gray-200 rounded p-2 w-full" type="text" name="valasz4"></input>
-                    </label>
+                    <div class="col-md-3 mb-3 col-start-6 col-span-5">
+                        <input type="text" name="answer4[]" class="border border-gray-200 rounded p-2 w-full"
+                            placeholder="4. válasz" required>
+                    </div>
 
-
+                    <div class="col-md-2 mb-3 d-grid">
+                        <button
+                            class="btn btn-success bg-cyan-600 text-white text-2xl rounded py-2 px-6 hover:bg-black fa-solid fa-plus add_question_btn"></button>
+                    </div>
                 </div>
             </div>
 
             <div class="mb-6">
-                <button class="bg-cyan-600 text-white rounded py-2 px-4 hover:bg-black">
+                <button class="bg-cyan-600 text-white rounded py-2 px-4 hover:bg-black" id="store_survey">
                     Kérdőív létrehozása
                 </button>
 
@@ -78,16 +72,5 @@
             </div>
         </form>
     </div>
+
 </x-layout>
-
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#add_question_btn').on('click', function() {
-            var html = '';
-            html +=
-                '<div class="kerdes_item pt-7 pb-7"><label for="kerdes" class="inline-block text-lg mb-2"> Kérdés<input class="border border-gray-200 rounded p-2 w-full" type="text" name="kerdes"></input></label><button type="button" class="bg-red-600 text-white text-xl rounded py-2 px-6 hover:bg-black float-right mt-5 fa-solid fa-trash" id="remove_question_btn"></button></div><label for="valasz1" class="inline-block text-lg mb-2"> 1. válasz<input class="border border-gray-200 rounded p-2 w-full" type="text" name="valasz1"></input></label><label for="valasz2" class="inline-block text-lg mb-2"> 2. válasz<input class="border border-gray-200 rounded p-2 w-full" type="text" name="valasz2"></input></label><label for="valasz3" class="inline-block text-lg mb-2"> 3. válasz<input class="border border-gray-200 rounded p-2 w-full" type="text" name="valasz3"></input></label><label for="valasz4" class="inline-block text-lg mb-2"> 4. válasz<input class="border border-gray-200 rounded p-2 w-full" type="text" name="valasz4"></input></label>';
-        })
-
-        $('#questions_answers').append(html);
-    });
-</script>
