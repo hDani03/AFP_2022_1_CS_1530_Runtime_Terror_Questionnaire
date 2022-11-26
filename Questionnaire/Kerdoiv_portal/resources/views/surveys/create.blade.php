@@ -73,4 +73,55 @@
         </form>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('.add_question_btn').click(function(e) {
+                e.preventDefault();
+
+                $('#show_question').prepend(`<div class="row grid grid-cols-10 gap-4">
+                    
+                    <div class="col-md-4 mb-3 col-start-2 col-span-8">
+                        <label for="question[]" class="text-lg mb-2"> Kérdés </label>
+                        <input type="text" name="question[]" class="border border-gray-200 rounded p-2 w-full" required>
+                    </div>
+
+                    <div class="col-md-3 mb-3 col-start-1 col-span-5">
+                        <input type="text" name="answer1[]" class="border border-gray-200 rounded p-2 w-full"
+                            placeholder="1. válasz" required>
+                    </div>
+
+                    <div class="col-md-3 mb-3 col-start-6 col-span-5">
+                        <input type="text" name="answer2[]" class="border border-gray-200 rounded p-2 w-full"
+                            placeholder="2. válasz" required>
+                    </div>
+
+                    <div class="col-md-3 mb-3 col-start-1 col-span-5">
+                        <input type="text" name="answer3[]" class="border border-gray-200 rounded p-2 w-full"
+                            placeholder="3. válasz" required>
+                    </div>
+
+                    <div class="col-md-3 mb-3 col-start-6 col-span-5">
+                        <input type="text" name="answer4[]" class="border border-gray-200 rounded p-2 w-full"
+                            placeholder="4. válasz" required>
+                    </div>
+
+                    <div class="col-md-2 mb-3 d-grid">
+                        <button class="btn btn-danger bg-red-600 text-white text-xl rounded py-2 px-6 hover:bg-black fa-solid fa-trash remove_question_btn"></button>
+                    </div>
+                </div>`)
+            });
+
+            $(document).on('click', '.remove_question_btn', function(e) {
+                e.preventDefault();
+
+                let row_item = $(this).parent().parent();
+                $(row_item).remove();
+            });
+
+        });
+    </script>
+
+
 </x-layout>
