@@ -61,8 +61,8 @@ Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
 
 
-
-
+// Adott kérdőív kérdőív statistikája
+Route::get('/surveys/{survey}/statistic', [SurveyController::class, 'statistic']);
 
 // Egy kérdőív listázása (legalul van a helye)
 Route::get('/surveys/{survey}', [SurveyController::class, 'show']);

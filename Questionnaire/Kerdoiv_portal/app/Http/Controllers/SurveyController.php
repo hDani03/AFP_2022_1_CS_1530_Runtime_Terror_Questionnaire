@@ -101,6 +101,14 @@ class SurveyController extends Controller
         ]);
     }
 
+    // Egy kérdőívhez tartozó statisztikák mutatása
+    public function statistic(Survey $survey)
+    {
+        return view('surveys.statistic', [
+            'survey' => $survey
+        ]);
+    }
+
     // Kérdőív létrehozása form mutatása
     public function create()
     {

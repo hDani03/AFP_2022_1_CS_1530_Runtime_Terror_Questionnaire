@@ -13,7 +13,7 @@
             {{-- Másik útvonalat hozzáadni --}}
             @auth
                 <div class="absolute h-32 w-32">
-                    <a href="/surveys/{{ $survey->survey_id }}">
+                    <a href="/surveys/{{ $survey->survey_id }}/statistic">
                         <button
                             class="fa fa-pie-chart bg-cyan-600 text-white rounded py-2 px-4 hover:bg-black relative bottom-0 left-0 h-12 w-12"
                             aria-hidden="true">
