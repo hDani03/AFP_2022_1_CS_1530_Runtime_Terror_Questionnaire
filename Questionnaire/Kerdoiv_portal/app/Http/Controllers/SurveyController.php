@@ -101,6 +101,8 @@ class SurveyController extends Controller
         ]);
     }
 
+    //Kérdőív módosítása
+
     // Egy kérdőívhez tartozó statisztikák mutatása
     public function statistic(Survey $survey)
     {
@@ -113,5 +115,22 @@ class SurveyController extends Controller
     public function create()
     {
         return view('surveys.create');
+    }
+
+    // Kérdőív módosítása form mutatása
+    public function manage()
+    {
+        return view('surveys.manage', ['surveys' => auth()->user()->surveys()->get()]);
+    }
+
+    // Kérdőív szerkesztése form mutatása
+    public function edit(Survey $survey)
+    {
+        $question = DB::table('questions')
+            ->select('kerdes_id', 'survey_id', 'kerdes')
+            ->where('survey_id', '=' , $survey->survey_id)
+            ->get();
+
+        return view('surveys.edit', ['survey' => $survey]);
     }
 }

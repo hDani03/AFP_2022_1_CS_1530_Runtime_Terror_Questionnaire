@@ -36,6 +36,11 @@ Route::post('/surveys', [SurveyController::class, 'store'])->middleware('auth');
 // Kérdőív létrehozása form megjelenítése
 Route::get('/surveys/create', [SurveyController::class, 'create'])->middleware('auth');
 
+//Kérdőívek kezelése
+Route::get('/surveys/manage', [SurveyController::class, 'manage'])->middleware('auth');
+
+//Show Edit Form
+Route::get('/surveys/{survey}/edit', [SurveyController::class, 'edit'])->middleware('auth');
 
 
 // FELHASZNÁLÓVAL KAPCSOLATOS ÚTVONALAK
