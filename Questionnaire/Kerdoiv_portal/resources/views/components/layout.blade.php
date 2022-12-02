@@ -31,7 +31,7 @@
         <a href="/">
             <img class="xxs:w-14 xs:w-24 sm:w-24 md:w-24 lg:w-24" src="{{ asset('images/logo.png') }}" alt="" class="logo" />
         </a>
-        <ul class="md:text-lg  sm:justify-around text-center xs:text-sm flex space-x-6 mr-6 ">
+        <ul class="md:text-lg  sm:justify-around text-center xxs:text-sm flex space-x-6 mr-6 ">
             @auth
                 <li>
                     <span class="font-bold uppercase">Üdv, {{ auth()->user()->name }}</span>

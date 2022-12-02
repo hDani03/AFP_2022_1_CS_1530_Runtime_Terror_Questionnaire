@@ -1,7 +1,7 @@
 <x-layout>
     <x-card class="p-10">
         <header>
-            <h1 class="text-3xl text-center font-bold my-6 uppercase">
+            <h1 class="xs:text-3xl text-center font-bold my-6 uppercase xxs:text-2xl justify-center">
                 Kérdőívek kezelése
             </h1>
         </header>
@@ -10,7 +10,7 @@
             <tbody>
                 @unless($surveys->isEmpty())
                     @foreach ($surveys as $survey)
-                        <tr class="border-gray-300">
+                        <tr class="xs:border-gray-300 xxs:border-gray-300 ">
                             <td class="px-4 py-8 border-t border-b border-gray-300 text-lg">
                                 <a href="show.html">
                                     {{$survey->cim}}
