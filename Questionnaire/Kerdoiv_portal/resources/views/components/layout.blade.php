@@ -72,13 +72,13 @@
     <footer
         class="fixed bottom-0 left-0 w-full flex items-center font-bold bg-cyan-600 text-white h-20 mt-20 opacity-90 
         md:justify-center
-        sm:text-sm ">
+        sm:text-sm justify-start text-center">
         <p class="ml-2">AFP I. gy. Runtime Terror csapat projektje</p>
 
         <a href="/surveys/create" 
         class="lg:absolute top-1/3 right-10 bg-black text-white py-2 px-5
             md:absolute top-1/3 ml-20 mr-5
-            sm:absolute ml-20 mr-5"> Kérdőív létrehozása
+            sm:absolute ml-20 mr-5  text-center"> Kérdőív létrehozása
         </a>
     </footer>
 
