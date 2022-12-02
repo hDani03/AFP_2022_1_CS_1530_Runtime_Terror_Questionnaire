@@ -23,12 +23,13 @@
         };
     </script>
     <title>Questionary | Kérdőívportál</title>
+    @vite('resources/css/app.css')
 </head>
 
 <body class="mb-48">
     <nav class="flex justify-between items-center mb-4">
         <a href="/">
-            <img class="w-24" src="{{ asset('images/logo.png') }}" alt="" class="logo" />
+            <img class="xxs:w-14 xs:w-24 sm:w-24 md:w-24 lg:w-24" src="{{ asset('images/logo.png') }}" alt="" class="logo" />
         </a>
         <ul class="flex space-x-6 mr-6 text-lg">
             @auth
@@ -69,10 +70,15 @@
 
 
     <footer
-        class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold bg-cyan-600 text-white h-20 mt-20 opacity-90 md:justify-center">
+        class="fixed bottom-0 left-0 w-full flex items-center font-bold bg-cyan-600 text-white h-20 mt-20 opacity-90 
+        md:justify-center
+        sm:text-sm ">
         <p class="ml-2">AFP I. gy. Runtime Terror csapat projektje</p>
 
-        <a href="/surveys/create" class="absolute top-1/3 right-10 bg-black text-white py-2 px-5"> Kérdőív létrehozása
+        <a href="/surveys/create" 
+        class="lg:absolute top-1/3 right-10 bg-black text-white py-2 px-5
+            md:absolute top-1/3 ml-20 mr-5
+            sm:absolute ml-20 mr-5"> Kérdőív létrehozása
         </a>
     </footer>
 
