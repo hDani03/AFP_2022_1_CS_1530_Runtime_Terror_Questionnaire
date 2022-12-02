@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Survey;
 use DateTime;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Psy\Command\WhereamiCommand;
 use Symfony\Component\Console\Question\Question;
 
 class SurveyController extends Controller
@@ -126,11 +128,29 @@ class SurveyController extends Controller
     // Kérdőív szerkesztése form mutatása
     public function edit(Survey $survey)
     {
-        $question = DB::table('questions')
-            ->select('kerdes_id', 'survey_id', 'kerdes')
-            ->where('survey_id', '=' , $survey->survey_id)
+
+        //dd($survey['id']);
+        
+        //dd($surveyEdit[0]);
+        //dd(DB::table('questions')->where('survey_id','=', $surveyEdit[0])->get());
+       
+        $questionsGet = DB::table('questions')
+            ->select('id','kerdes')
+            ->where('survey_id', 84)
             ->get();
 
-        return view('surveys.edit', ['survey' => $survey]);
+        //dd($questionsGet);
+        
+        $answersGet = DB::table('answers')
+            ->select('id', 'valasz1', 'valasz2', 'valasz3', 'valasz4')
+            ->where('survey_id', 84)
+            ->get();
+
+        //dd($questionsGet);
+
+        $surveyEdit = array($survey['id'], $survey['user_id'], $survey['cim'], $survey['rovid_leiras'], $questionsGet, $answersGet);
+        //dd($surveyEdit);
+
+        return view('surveys.edit', ['survey' => $surveyEdit]);
     }
 }
