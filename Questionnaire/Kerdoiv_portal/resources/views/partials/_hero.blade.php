@@ -5,10 +5,10 @@
 
 
     <div class="z-10">
-        <h1 class="text-6xl font-bold uppercase text-white">
+        <h1 class="sm:text-6xl xs:text-5xl font-bold uppercase text-white xxs:text-4xl">
             Kérdőív<span class="text-black">Portál</span>
         </h1>
-        <p class="text-2xl text-gray-200 font-bold my-4">
+        <p class="text-2xl text-gray-200 font-bold my-4 sm:tetx-lg">
             Kérdőívek kitöltése & létrehozása
         </p>
     </div>
