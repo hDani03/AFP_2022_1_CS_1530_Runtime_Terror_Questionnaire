@@ -42,6 +42,14 @@ Route::get('/surveys/manage', [SurveyController::class, 'manage'])->middleware('
 //Show Edit Form
 Route::get('/surveys/{survey}/edit', [SurveyController::class, 'edit'])->middleware('auth');
 
+//Kérdőív frissítése
+Route::put('/surveys/{survey}', [SurveyController::class, 'update'])->middleware('auth');
+
+//Kérdőív törlése
+Route::delete('/surveys/{survey}', [SurveyController::class, 'destroy'])->middleware('auth');
+
+
+
 
 // FELHASZNÁLÓVAL KAPCSOLATOS ÚTVONALAK
 

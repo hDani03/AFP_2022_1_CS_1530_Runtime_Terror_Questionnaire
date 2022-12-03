@@ -91,7 +91,6 @@ class SurveyController extends Controller
             $i++;
         }
 
-        //Answers tábla
         return redirect('/')->with('message', 'A kérdőív sikeresen létrehozva!');
     }
 
@@ -125,25 +124,26 @@ class SurveyController extends Controller
         return view('surveys.manage', ['surveys' => auth()->user()->surveys()->get()]);
     }
 
+
     // Kérdőív szerkesztése form mutatása
     public function edit(Survey $survey)
     {
 
         //dd($survey['id']);
-        
+
         //dd($surveyEdit[0]);
         //dd(DB::table('questions')->where('survey_id','=', $surveyEdit[0])->get());
-       
+
         $questionsGet = DB::table('questions')
-            ->select('id','kerdes')
-            ->where('survey_id', 84)
+            ->select('id', 'kerdes')
+            ->where('survey_id', $survey['id'])
             ->get();
 
         //dd($questionsGet);
-        
+
         $answersGet = DB::table('answers')
             ->select('id', 'valasz1', 'valasz2', 'valasz3', 'valasz4')
-            ->where('survey_id', 84)
+            ->where('survey_id', $survey['id'])
             ->get();
 
         //dd($questionsGet);
@@ -153,4 +153,81 @@ class SurveyController extends Controller
 
         return view('surveys.edit', ['survey' => $surveyEdit]);
     }
+
+    public function update(Request $request, Survey $survey)
+    {
+        dd($survey);
+        $questionsGet = DB::table('questions')
+            ->select('id', 'kerdes')
+            ->where('survey_id', $survey['id'])
+            ->get();
+
+        $answersGet = DB::table('answers')
+            ->select('id', 'valasz1', 'valasz2', 'valasz3', 'valasz4')
+            ->where('survey_id', $survey['id'])
+            ->get();
+
+        //dd($questionsGet);
+        $surveyEdit = array($survey['id'], $survey['user_id'], $survey['cim'], $survey['rovid_leiras'], $questionsGet, $answersGet);
+        $survey = $surveyEdit;
+        //dd($survey);
+        $dt = new DateTime(now());
+        $questions = $survey[4];
+        $answers = $survey[5];
+
+        if ($survey[1] != auth()->id()) {
+            abort('403', 'Unauthorized action');
+        }
+
+        $formFields = $request->validate([
+            'cim' => 'required',
+            'leiras' => 'required',
+        ]);
+
+        //dd($survey);
+        DB::table('surveys')
+            ->where('survey_id', $survey[0])
+            ->update(
+                [
+                    'cim' =>  $formFields['cim'],
+                    'rovid_leiras' => $formFields['leiras'],
+                    'updated_at' => $dt
+                ]
+            );
+
+
+        for ($i=0; $i < count($survey[4]); $i++) { 
+            dd($survey[4][1]->kerdes);
+            DB::table('questions')
+            ->where('survey_id', $survey[0])
+            ->update([
+                'kerdes' => $survey[4][$i]->kerdes,
+                'updated_at' => $dt
+            ]);
+        //Answers tábla
+        DB::table('answers')
+            ->where('survey_id', $survey[0])
+            ->update([
+                'valasz1' => $survey[5][$i]->valasz1,
+                'valasz2' => $survey[5][$i]->valasz2,
+                'valasz3' => $survey[5][$i]->valasz3,
+                'valasz4' => $survey[5][$i]->valasz4,
+                'updated_at' => $dt
+            ]);
+        }
+
+        return back()->with('message', 'Survey updated successfully!');
+    }
+
+        //Delete Listing
+        public function destroy(Survey $survey)
+        {
+            //Make sure logged in user is owner
+            if ($survey->user_id != auth()->id()) {
+                abort('403', 'Unauthorized action');
+            }
+    
+            $survey->delete();
+            return redirect('/')->with('message', 'Survey deleted successfully');
+        }
 }

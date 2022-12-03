@@ -28,25 +28,24 @@
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>
-            {{-- Kérdés --}}
-            @foreach ($survey[4] as $question)
+
+            @for ($i = 0; $i < count($survey[4]); $i++)
+                {{-- Kérdés --}}
+
                 <div class="mb-6">
                     <label for="kerdes" class="inline-block text-lg mb-2"> Kérdés </label>
                     <input type="text" class="border border-gray-200 rounded p-2 w-full" name="kerdes"
-                        value="{{ $question->kerdes }}" />
+                        value="{{ $survey[4][$i]->kerdes }}" />
                     @error('kerdes')
                         <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                     @enderror
                 </div>
-            @endforeach
 
-            {{-- Válaszok --}}
-
-            @foreach ($survey[5] as $answer)
+                {{-- Válaszok --}}
                 <div class="mb-6">
                     <label for="valasz1" class="inline-block text-lg mb-2"> 1. Válasz </label>
                     <input type="text" class="border border-gray-200 rounded p-2 w-full" name="valasz1"
-                        value="{{ $answer->valasz1 }}" />
+                        value="{{ $survey[5][$i]->valasz1 }}" />
                     @error('valasz1')
                         <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                     @enderror
@@ -54,7 +53,7 @@
                 <div class="mb-6">
                     <label for="valasz2" class="inline-block text-lg mb-2"> 2. Válasz </label>
                     <input type="text" class="border border-gray-200 rounded p-2 w-full" name="valasz2"
-                        value="{{ $answer->valasz2 }}" />
+                        value="{{ $survey[5][$i]->valasz2 }}" />
                     @error('valasz2')
                         <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                     @enderror
@@ -62,7 +61,7 @@
                 <div class="mb-6">
                     <label for="valasz3" class="inline-block text-lg mb-2"> 3. Válasz </label>
                     <input type="text" class="border border-gray-200 rounded p-2 w-full" name="valasz3"
-                        value="{{ $answer->valasz3 }}" />
+                        value="{{ $survey[5][$i]->valasz3 }}" />
                     @error('valasz3')
                         <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                     @enderror
@@ -70,13 +69,13 @@
                 <div class="mb-6">
                     <label for="valasz4" class="inline-block text-lg mb-2"> 4. Válasz </label>
                     <input type="text" class="border border-gray-200 rounded p-2 w-full" name="valasz4"
-                        value="{{ $answer->valasz4 }}" />
+                        value="{{ $survey[5][$i]->valasz4 }}" />
                     @error('lvalsz4')
                         <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                     @enderror
                 </div>
-            @endforeach
-
+                <br>
+            @endfor
 
 
             <div class="mb-6">
