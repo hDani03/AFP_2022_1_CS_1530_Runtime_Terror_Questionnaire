@@ -4,6 +4,27 @@ use Illuminate\Support\Facades\Facade;
 
 return [
 
+    'guards' => [
+        'web' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+    ],
+    'providers' => [
+        'users' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\User::class,
+        ],
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
+        ],
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -195,6 +216,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        
+
     ],
 
     /*
@@ -212,4 +235,7 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 
+
+
+    
 ];

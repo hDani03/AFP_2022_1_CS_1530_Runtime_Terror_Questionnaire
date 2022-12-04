@@ -68,6 +68,19 @@ Route::get('/login', [UserController::class, 'login'])->name('login')->middlewar
 // Felhasználó bejelentkeztetés
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
+// Admin jogosultság
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
+    Route::get('/login', [AdminAuthController::class, 'getLogin'])->name('adminLogin');
+    Route::post('/login', [AdminAuthController::class, 'postLogin'])->name('adminLoginPost');
+
+    Route::group(['middleware' => 'adminauth'], function () {
+        Route::get('/', function () {
+            return view('welcome');
+        })->name('adminDashboard');
+
+    });
+});
+
 
 
 
