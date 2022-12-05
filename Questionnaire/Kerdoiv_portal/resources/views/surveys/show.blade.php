@@ -25,18 +25,15 @@
                 <div class="row grid grid-cols-10 gap-4">
 
                     @for ($i = 0; $i < count($questions); $i++)
-                        {{-- válasz kiválasztást módosítani, mert így az egész formon csak egyet tudok kiválasztani, de az kell hogy egy kérdésen belül tudjon csak egyet választani --}}
-                        <legend class="sr-only">
-                            answers
-                        </legend>
                         <div class="col-md-4 mb-3 col-start-1 col-span-8">
                             <p class="justify-center font-bold text-2xl pt-5"> {{ $questions[$i]->kerdes }} </p>
                         </div>
 
                         <div class="col-md-3 mb-3 col-start-1 col-span-5">
                             <div class="flex items-center">
-                                <input id="answer_option_1" name="answers" type="radio" value=""
-                                    class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" checked="">
+                                <input id="answer_option_1" name="answers{{ $i }}" type="radio"
+                                    value="" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300"
+                                    checked="">
                                 <label for="option_1" class="text-lg font-medium text-gray-900 ml-2 block">
                                     {{ $answers[$i]->valasz1 }}
                                 </label>
@@ -45,8 +42,9 @@
 
                         <div class="col-md-3 mb-3 col-start-6 col-span-5">
                             <div class="flex items-center">
-                                <input id="answer_option_2" name="answers" type="radio" value=""
-                                    class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" checked="">
+                                <input id="answer_option_2" name="answers{{ $i }}" type="radio"
+                                    value="" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300"
+                                    checked="">
                                 <label for="option_2" class="text-lg font-medium text-gray-900 ml-2 block">
                                     {{ $answers[$i]->valasz2 }}
                                 </label>
@@ -55,8 +53,9 @@
 
                         <div class="col-md-3 mb-3 col-start-1 col-span-5">
                             <div class="flex items-center">
-                                <input id="answer_option_3" name="answers" type="radio" value=""
-                                    class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" checked="">
+                                <input id="answer_option_3" name="answers{{ $i }}" type="radio"
+                                    value="" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300"
+                                    checked="">
                                 <label for="option_3" class="text-lg font-medium text-gray-900 ml-2 block">
                                     {{ $answers[$i]->valasz3 }}
                                 </label>
@@ -65,8 +64,9 @@
 
                         <div class="col-md-3 mb-3 col-start-6 col-span-5">
                             <div class="flex items-center">
-                                <input id="answer_option_4" name="answers" type="radio" value=""
-                                    class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" checked="">
+                                <input id="answer_option_4" name="answers{{ $i }}" type="radio"
+                                    value="" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300"
+                                    checked="">
                                 <label for="option_4" class="text-lg font-medium text-gray-900 ml-2 block">
                                     {{ $answers[$i]->valasz4 }}
                                 </label>
