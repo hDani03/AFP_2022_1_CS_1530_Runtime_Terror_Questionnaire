@@ -156,7 +156,7 @@ class SurveyController extends Controller
 
     public function update(Request $request, Survey $survey)
     {
-        dd($survey);
+        //dd($survey);
         $questionsGet = DB::table('questions')
             ->select('id', 'kerdes')
             ->where('survey_id', $survey['id'])
@@ -196,38 +196,37 @@ class SurveyController extends Controller
             );
 
 
-        for ($i=0; $i < count($survey[4]); $i++) { 
-            dd($survey[4][1]->kerdes);
+        for ($i = 0; $i < count($survey[4]); $i++) {
+            //dd($survey[4][$i]->id);
             DB::table('questions')
-            ->where('survey_id', $survey[0])
-            ->update([
-                'kerdes' => $survey[4][$i]->kerdes,
-                'updated_at' => $dt
-            ]);
-        //Answers tábla
-        DB::table('answers')
-            ->where('survey_id', $survey[0])
-            ->update([
-                'valasz1' => $survey[5][$i]->valasz1,
-                'valasz2' => $survey[5][$i]->valasz2,
-                'valasz3' => $survey[5][$i]->valasz3,
-                'valasz4' => $survey[5][$i]->valasz4,
-                'updated_at' => $dt
-            ]);
+                ->where('id', $survey[4][$i]->id)
+                ->update([
+                    'kerdes' => $request->kerdes[$i],
+                    'updated_at' => $dt
+                ]);
+            //Answers tábla
+            DB::table('answers')
+                ->where('question_id', $survey[4][$i]->id)
+                ->update([
+                    'valasz1' => $request->valasz1[$i],
+                    'valasz2' => $request->valasz2[$i],
+                    'valasz3' => $request->valasz3[$i],
+                    'valasz4' => $request->valasz4[$i],
+                    'updated_at' => $dt
+                ]);
         }
 
         return back()->with('message', 'Survey updated successfully!');
     }
 
-        //Delete Listing
-        public function destroy(Survey $survey)
-        {
-            //Make sure logged in user is owner
-            if ($survey->user_id != auth()->id()) {
-                abort('403', 'Unauthorized action');
-            }
-    
-            $survey->delete();
-            return redirect('/')->with('message', 'Survey deleted successfully');
+    public function destroy(Survey $survey)
+    {
+
+        if ($survey->user_id != auth()->id()) {
+            abort('403', 'Unauthorized action');
         }
+
+        $survey->delete();
+        return redirect('/')->with('message', 'Survey deleted successfully');
+    }
 }
