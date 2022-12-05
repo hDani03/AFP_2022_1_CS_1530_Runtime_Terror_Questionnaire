@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Survey extends Model
 {
-    protected $fillable = ['cim'];
+    protected $fillable = ['id', 'survey_id', 'cim', 'rovid_leiras', 'created_at', 'updated_at'];
     use HasFactory;
 
     public function scopeFilter($query, array $filters){

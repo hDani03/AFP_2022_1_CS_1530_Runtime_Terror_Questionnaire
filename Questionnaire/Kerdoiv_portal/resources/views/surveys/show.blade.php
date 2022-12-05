@@ -4,7 +4,8 @@
 
 <x-layout>
 
-    <a href="/" class="inline-block text-black ml-4 mb-4"><i class="fa-solid fa-arrow-left"></i> Vissza
+    <a href="/" class="inline-block text-black ml-4 mb-4">
+        <i class="fa-solid fa-arrow-left"></i> Vissza
     </a>
     <div class="mx-4">
         <x-card class="p-24">
@@ -25,7 +26,7 @@
                 <div class="row grid grid-cols-10 gap-4">
 
                     @for ($i = 0; $i < count($questions); $i++)
-                        <div class="col-md-4 mb-3 col-start-1 col-span-8">
+                        <div class="col-md-4 mb-3 col-start-1 col-span-10">
                             <p class="justify-center font-bold text-2xl pt-5"> {{ $questions[$i]->kerdes }} </p>
                         </div>
 
@@ -75,7 +76,7 @@
                     @endfor
 
                 </div>
-                <button type="submit" class="bg-cyan-600 text-white rounded py-2 px-4 mr-5 hover:bg-black">
+                <button type="submit" class="bg-cyan-600 text-white rounded mt-10 py-2 px-4 mr-5 hover:bg-black">
                     Kérdőív leadása
                 </button>
 

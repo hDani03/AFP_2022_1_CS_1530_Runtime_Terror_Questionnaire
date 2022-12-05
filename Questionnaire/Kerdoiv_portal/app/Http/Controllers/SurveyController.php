@@ -18,7 +18,7 @@ class SurveyController extends Controller
     {
         if (Auth::check()) {
             return view('surveys.index', [
-                'surveys' => Survey::latest()->filter(request(['search']))->paginate()->withQueryString()
+                'surveys' => Survey::latest()->filter(request(['search']))->paginate()
             ]);
         } else {
             return view('surveys.index', [
