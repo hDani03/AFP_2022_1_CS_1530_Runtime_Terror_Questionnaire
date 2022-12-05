@@ -27,6 +27,26 @@ class SurveyController extends Controller
         }
     }
 
+    public static function getQuestions(Survey $survey){
+        $questionList = DB::table('questions')
+            ->select('kerdes')
+            ->where('survey_id', $survey['id'])
+            ->get();
+
+        //dd($questionList);
+        return $questionList;
+    }
+
+    public static function getAnswers(Survey $survey){
+        $answerList = DB::table('answers')
+        ->select('valasz1', 'valasz2', 'valasz3', 'valasz4')
+        ->where('survey_id', $survey['id'])
+        ->get();
+
+        //dd($answerList);
+        return $answerList;
+    }
+
     //A kérdőív adatainak eltárolása
     public function store(Request $request)
     {
