@@ -86,7 +86,9 @@
                 </button>
 
                 <a href="/" class="inline-block text-black ml-4 mb-4">
-                    <i class="fa-solid fa-arrow-left"></i> Vissza
+                    <i class="bg-cyan-600 text-white rounded mt-10 py-2 px-4 mr-5 hover:bg-black">
+                        Vissza a főoldalra
+                    </i>
                 </a>
             </form>
         </x-card>
