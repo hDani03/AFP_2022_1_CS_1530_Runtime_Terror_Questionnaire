@@ -100,26 +100,41 @@
                     <div class="col-md-4 mb-3 col-start-2 col-span-8">
                         <label for="question[]" class="text-lg mb-2"> Kérdés </label>
                         <input type="text" name="question[]" class="border border-gray-200 rounded p-2 w-full" required>
+                        @error('question[]')
+                            <p class="text-red-500 text-xs mt-1"> {{ $message }} </p>
+                        @enderror
                     </div>
 
                     <div class="col-md-3 mb-3 col-start-1 col-span-5">
                         <input type="text" name="answer1[]" class="border border-gray-200 rounded p-2 w-full"
                             placeholder="1. válasz" required>
+                        @error('answer1[]')
+                            <p class="text-red-500 text-xs mt-1"> {{ $message }} </p>
+                        @enderror
                     </div>
 
                     <div class="col-md-3 mb-3 col-start-6 col-span-5">
                         <input type="text" name="answer2[]" class="border border-gray-200 rounded p-2 w-full"
                             placeholder="2. válasz" required>
+                        @error('answer2[]')
+                            <p class="text-red-500 text-xs mt-1"> {{ $message }} </p>
+                        @enderror
                     </div>
 
                     <div class="col-md-3 mb-3 col-start-1 col-span-5">
                         <input type="text" name="answer3[]" class="border border-gray-200 rounded p-2 w-full"
                             placeholder="3. válasz" required>
+                        @error('answer3[]')
+                            <p class="text-red-500 text-xs mt-1"> {{ $message }} </p>
+                        @enderror
                     </div>
 
                     <div class="col-md-3 mb-3 col-start-6 col-span-5">
                         <input type="text" name="answer4[]" class="border border-gray-200 rounded p-2 w-full"
                             placeholder="4. válasz" required>
+                        @error('answer4[]')
+                            <p class="text-red-500 text-xs mt-1"> {{ $message }} </p>
+                        @enderror
                     </div>
 
                     <div class="col-md-2 mb-3 d-grid">
