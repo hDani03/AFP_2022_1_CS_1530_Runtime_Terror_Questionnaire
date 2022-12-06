@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redis;
 use Psy\Command\WhereamiCommand;
 use Symfony\Component\Console\Question\Question;
 
@@ -27,7 +28,27 @@ class SurveyController extends Controller
         }
     }
 
-    public static function getQuestions(Survey $survey){
+    public static function getSurveyId(Survey $survey)
+    {
+        $questionList = DB::table('surveys')
+            ->select('id')
+            ->where('survey_id', $survey['id'])
+            ->get();
+
+        return $questionList;
+    }
+    public static function getQuestionId(Survey $survey)
+    {
+        $questionList = DB::table('questions')
+            ->select('id')
+            ->where('survey_id', $survey['id'])
+            ->get();
+
+        return $questionList;
+    }
+
+    public static function getQuestions(Survey $survey)
+    {
         $questionList = DB::table('questions')
             ->select('kerdes')
             ->where('survey_id', $survey['id'])
@@ -37,14 +58,51 @@ class SurveyController extends Controller
         return $questionList;
     }
 
-    public static function getAnswers(Survey $survey){
+    public static function getAnswers(Survey $survey)
+    {
         $answerList = DB::table('answers')
-        ->select('valasz1', 'valasz2', 'valasz3', 'valasz4')
-        ->where('survey_id', $survey['id'])
-        ->get();
+            ->select('valasz1', 'valasz2', 'valasz3', 'valasz4')
+            ->where('survey_id', $survey['id'])
+            ->get();
 
         //dd($answerList);
         return $answerList;
+    }
+
+    public function complete(Request $request)
+    {
+        $data = $request->except('_token');
+        $requestKeys = collect($request->except('_token'))->keys();
+        //dd($data);
+        $end = 0;
+
+        for ($i = 0; $i < $request['count']; $i++) {
+            $formFields = array(
+                $request['survey_id']
+            );
+            $j = $end;
+            array_push($formFields, $request[$requestKeys[$j]]);
+            array_push($formFields, $request[$requestKeys[$j + 1]]);
+            $j=$j+2;
+            $end = $j;
+            //dd($formFields);
+            //dd($formFields);
+            DB::table('completed_questions')->insert(
+                array(
+                    'survey_id' => $formFields[0],
+                    'answer' => $formFields[1],
+                    'question_id' => $formFields[2]
+                )
+            );
+        }
+
+        //dd($formFields);
+
+
+
+        if (true) {
+            return redirect('/')->with('message', 'Sikeres kitöltés.');
+        }
     }
 
     //A kérdőív adatainak eltárolása

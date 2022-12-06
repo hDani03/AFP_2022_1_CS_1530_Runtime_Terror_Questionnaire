@@ -33,6 +33,9 @@ Route::get('/', [SurveyController::class, 'index']);
 // Kérdőív létrehozása
 Route::post('/surveys', [SurveyController::class, 'store'])->middleware('auth');
 
+//Kérdőív leadása
+Route::post('/surveys/complete', [SurveyController::class, 'complete']);
+
 // Kérdőív létrehozása form megjelenítése
 Route::get('/surveys/create', [SurveyController::class, 'create'])->middleware('auth');
 
