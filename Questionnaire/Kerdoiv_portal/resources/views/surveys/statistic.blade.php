@@ -12,13 +12,13 @@
             </div>
 
             <div id="show_question">
-                <div class="row grid grid-cols-10 gap-4">
+                <div class="sm:grid-cols-10  xs:row grid grid-cols-3 gap-4">
                     <div class="col-md-4 mb-3 col-start-1 col-span-8">
                         <p class="text-lg mb-2 font-bold"> 1. Kérdés: Kérdés helye </p>
                     </div>
 
 
-                    <div class="col-md-3 mb-3 col-start-1 col-span-5">
+                    <div class="xs:col-start-1 sm:col-md-3 mb-3 col-start-1 col-span-5">
                         <label for="answer1" class="text-lg mb-2" id="question_counter"> 1. Válasz </label>
                         <div class="w-full bg-gray-200 rounded-full dark:bg-gray-700">
                             <div class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full"
@@ -27,7 +27,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3 mb-3 col-start-6 col-span-5">
+                    <div class="sm:col-start-6 xs:col-md-3 mb-3 col-start-1 col-span-5 ">
                         <label for="answer2" class="text-lg mb-2" id="question_counter"> 2. Válasz </label>
                         <div class="w-full bg-gray-200 rounded-full dark:bg-gray-700">
                             <div class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full"
@@ -36,7 +36,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3 mb-3 col-start-1 col-span-5">
+                    <div class="sm:col-md-3 mb-3 col-start-1 col-span-5">
                         <label for="answer3" class="text-lg mb-2" id="question_counter"> 3. Válasz </label>
                         <div class="w-full bg-gray-200 rounded-full dark:bg-gray-700">
                             <div class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full"
@@ -45,7 +45,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3 mb-3 col-start-6 col-span-5">
+                    <div class="sm:col-start-6 xs:col-md-3 mb-3 col-start-1 col-span-5">
                         <label for="answer3" class="text-lg mb-2" id="question_counter"> 4. Válasz </label>
                         <div class="w-full bg-gray-200 rounded-full dark:bg-gray-700">
                             <div class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full"
