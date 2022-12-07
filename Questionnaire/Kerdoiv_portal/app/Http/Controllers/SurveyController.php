@@ -54,7 +54,6 @@ class SurveyController extends Controller
             ->where('survey_id', $survey['id'])
             ->get();
 
-        //dd($questionList);
         return $questionList;
     }
 
@@ -65,7 +64,7 @@ class SurveyController extends Controller
             ->where('survey_id', $survey['id'])
             ->get();
 
-        //dd($answerList);
+
         return $answerList;
     }
 
@@ -135,7 +134,6 @@ class SurveyController extends Controller
     {
         $data = $request->except('_token');
         $requestKeys = collect($request->except('_token'))->keys();
-        //dd($data);
         $end = 0;
 
         for ($i = 0; $i < $request['count']; $i++) {
@@ -147,8 +145,6 @@ class SurveyController extends Controller
             array_push($formFields, $request[$requestKeys[$j + 1]]);
             $j = $j + 2;
             $end = $j;
-            //dd($formFields);
-            //dd($formFields);
             DB::table('completed_questions')->insert(
                 array(
                     'survey_id' => $formFields[0],
@@ -158,7 +154,6 @@ class SurveyController extends Controller
             );
         }
 
-        //dd($formFields);
 
 
 
@@ -242,7 +237,6 @@ class SurveyController extends Controller
         ]);
     }
 
-    //Kérdőív módosítása
 
     // Egy kérdőívhez tartozó statisztikák mutatása
     public function statistic(Survey $survey)
@@ -269,34 +263,27 @@ class SurveyController extends Controller
     public function edit(Survey $survey)
     {
 
-        //dd($survey['id']);
-
-        //dd($surveyEdit[0]);
-        //dd(DB::table('questions')->where('survey_id','=', $surveyEdit[0])->get());
 
         $questionsGet = DB::table('questions')
             ->select('id', 'kerdes')
             ->where('survey_id', $survey['id'])
             ->get();
 
-        //dd($questionsGet);
 
         $answersGet = DB::table('answers')
             ->select('id', 'valasz1', 'valasz2', 'valasz3', 'valasz4')
             ->where('survey_id', $survey['id'])
             ->get();
 
-        //dd($questionsGet);
+
 
         $surveyEdit = array($survey['id'], $survey['user_id'], $survey['cim'], $survey['rovid_leiras'], $questionsGet, $answersGet);
-        //dd($surveyEdit);
 
         return view('surveys.edit', ['survey' => $surveyEdit]);
     }
 
     public function update(Request $request, Survey $survey)
     {
-        //dd($survey);
         $questionsGet = DB::table('questions')
             ->select('id', 'kerdes')
             ->where('survey_id', $survey['id'])
@@ -307,10 +294,8 @@ class SurveyController extends Controller
             ->where('survey_id', $survey['id'])
             ->get();
 
-        //dd($questionsGet);
         $surveyEdit = array($survey['id'], $survey['user_id'], $survey['cim'], $survey['rovid_leiras'], $questionsGet, $answersGet);
         $survey = $surveyEdit;
-        //dd($survey);
         $dt = new DateTime(now());
         $questions = $survey[4];
         $answers = $survey[5];
@@ -324,7 +309,6 @@ class SurveyController extends Controller
             'leiras' => 'required',
         ]);
 
-        //dd($survey);
         DB::table('surveys')
             ->where('survey_id', $survey[0])
             ->update(
@@ -337,7 +321,6 @@ class SurveyController extends Controller
 
 
         for ($i = 0; $i < count($survey[4]); $i++) {
-            //dd($survey[4][$i]->id);
             DB::table('questions')
                 ->where('id', $survey[4][$i]->id)
                 ->update([

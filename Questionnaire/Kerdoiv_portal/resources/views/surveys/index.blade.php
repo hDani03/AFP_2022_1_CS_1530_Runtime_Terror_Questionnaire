@@ -8,7 +8,6 @@
     @include('partials._search')
 
     <div class="lg:grid-cols-2 gap-4 space-y-4 md:space-y-0 mx-4 sm: mx-4">
-        {{-- dd($surveys) --}}
         @auth
             @if (count($surveys) >= 1)
                 @foreach ($surveys as $survey)

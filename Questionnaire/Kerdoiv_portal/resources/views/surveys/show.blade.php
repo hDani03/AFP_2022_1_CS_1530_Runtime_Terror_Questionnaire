@@ -93,25 +93,6 @@
             </form>
         </x-card>
 
-        {{-- 
-            <x-card class="mt-4 p-2 flex space-x-6">
-            <a href="/surveys/{{ $survey->survey_id }}/edit">
-                <i class="fa-solid fa-pencil"></i> Módosítás
-            </a>
-
-            <form action="/surveys/{{ $survey->survey_id }}">
-                @csrf
-                @method('DELETE')
-                <button type="submit" class="text-red-500">
-                    <i class="fa-solid fa-trash"></i> Törlés
-                </button>
-
-            </form>
-
-        </x-card>
-            
-            --}}
-
 
     </div>
 </x-layout>
