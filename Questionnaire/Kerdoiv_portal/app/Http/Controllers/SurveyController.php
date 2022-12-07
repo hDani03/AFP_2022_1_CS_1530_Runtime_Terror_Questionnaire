@@ -339,7 +339,7 @@ class SurveyController extends Controller
                 ]);
         }
 
-        return back()->with('message', 'Survey updated successfully!');
+        return back()->with('message', 'A kérdőív sikeresen módosítva');
     }
 
     public function destroy(Survey $survey)
@@ -350,6 +350,6 @@ class SurveyController extends Controller
         }
 
         $survey->delete();
-        return redirect('/')->with('message', 'Survey deleted successfully');
+        return redirect('/')->with('message', 'A kérdőív sikeresen törölve');
     }
 }
