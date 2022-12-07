@@ -69,6 +69,68 @@ class SurveyController extends Controller
         return $answerList;
     }
 
+    public static function getAllQuestions(Survey $survey)
+    {
+        $allQuestionsList = DB::table('completed_questions')
+            ->select('question_id')
+            ->distinct()
+            ->where('survey_id', $survey['id'])
+            ->get();
+
+        return $allQuestionsList;
+    }
+
+    public static function getAllAnswers(Survey $survey)
+    {
+        $allAnswersList = array();
+        $allQuestionsList = DB::table('completed_questions')
+            ->select('question_id')
+            ->distinct()
+            ->where('survey_id', $survey['id'])
+            ->get();
+
+        $allAnswers = DB::table('completed_questions')
+                ->select('answer')
+                ->where('survey_id', '=', $survey['id'])
+                ->count();
+
+        foreach ($allQuestionsList as $question) {
+            array_push(
+                $allAnswersList,
+                (round(DB::table('completed_questions')
+                    ->select('answer')
+                    ->where('survey_id', '=', $survey['id'])
+                    ->where('question_id', '=', $question->question_id)
+                    ->where('answer', '=', 1)
+                    ->count() / $allAnswers * count($allQuestionsList),2)*100),
+
+                (round(DB::table('completed_questions')
+                    ->select('answer')
+                    ->where('survey_id', '=', $survey['id'])
+                    ->where('question_id', '=', $question->question_id)
+                    ->where('answer', '=', 2)
+                    ->count()/$allAnswers * count($allQuestionsList),2)*100),
+
+                (round(DB::table('completed_questions')
+                    ->select('answer')
+                    ->where('survey_id', '=', $survey['id'])
+                    ->where('question_id', '=', $question->question_id)
+                    ->where('answer', '=', 3)
+                    ->count()/$allAnswers* count($allQuestionsList),2)*100),
+
+                (round(DB::table('completed_questions')
+                    ->select('answer')
+                    ->where('survey_id', '=', $survey['id'])
+                    ->where('question_id', '=', $question->question_id)
+                    ->where('answer', '=', 4)
+                    ->count()/$allAnswers* count($allQuestionsList),2)*100)
+            );
+        }
+
+
+        return $allAnswersList;
+    }
+
     public function complete(Request $request)
     {
         $data = $request->except('_token');
@@ -83,7 +145,7 @@ class SurveyController extends Controller
             $j = $end;
             array_push($formFields, $request[$requestKeys[$j]]);
             array_push($formFields, $request[$requestKeys[$j + 1]]);
-            $j=$j+2;
+            $j = $j + 2;
             $end = $j;
             //dd($formFields);
             //dd($formFields);

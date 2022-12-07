@@ -6,6 +6,9 @@
     @php
         $questions = App\Http\Controllers\SurveyController::getQuestions($survey);
         $answers = App\Http\Controllers\SurveyController::getAnswers($survey);
+        $allQuestionId = App\Http\Controllers\SurveyController::getAllQuestions($survey);
+        $allAnswers = App\Http\Controllers\SurveyController::getAllAnswers($survey);
+        
     @endphp
 
     <div class="mx-4">
@@ -29,7 +32,7 @@
                             </label>
                             <div class="w-full bg-gray-200 rounded-full dark:bg-gray-700">
                                 <div class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full"
-                                    style="width: 60%"> 60%
+                                    style="width: {{$allAnswers[$i*4]}}%"> {{$allAnswers[$i*4]}}%
                                 </div>
                             </div>
                         </div>
@@ -40,7 +43,7 @@
                             </label>
                             <div class="w-full bg-gray-200 rounded-full dark:bg-gray-700">
                                 <div class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full"
-                                    style="width: 19%"> 19%
+                                    style="width: {{$allAnswers[$i*4+1]}}%"> {{$allAnswers[$i*4+1]}}%
                                 </div>
                             </div>
                         </div>
@@ -51,7 +54,7 @@
                             </label>
                             <div class="w-full bg-gray-200 rounded-full dark:bg-gray-700">
                                 <div class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full"
-                                    style="width: 45%"> 45%
+                                    style="width: {{$allAnswers[$i*4+2]}}%"> {{$allAnswers[$i*4+2]}}%
                                 </div>
                             </div>
                         </div>
@@ -62,11 +65,15 @@
                             </label>
                             <div class="w-full bg-gray-200 rounded-full dark:bg-gray-700">
                                 <div class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full"
-                                    style="width: 77%"> 77%
+                                    style="width: {{$allAnswers[$i*4+3]}}%"> {{$allAnswers[$i*4+3]}}%
                                 </div>
                             </div>
                         </div>
+
+
+
                     @endfor
+
 
                 </div>
             </div>
