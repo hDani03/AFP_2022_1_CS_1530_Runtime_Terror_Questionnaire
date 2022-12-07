@@ -38,12 +38,12 @@
                 </li>
 
                 <li>
-                    <a href="/surveys/manage" class="hover:text-laravel"><i class="fa-solid fa-gear"></i>
+                    <a href="/surveys/manage" class="hover:text-cyan-600"><i class="fa-solid fa-gear"></i>
                         Kérdőívek kezelése</a>
                 </li>
 
                 <li>
-                    <form class="inline" method="POST" action="/logout">
+                    <form class="inline hover:text-cyan-600" method="POST" action="/logout">
                         @csrf
                         <button type="submit">
                             <i class="fa-solid fa-door-closed"></i> Kijelentkezés
@@ -52,10 +52,10 @@
                 </li>
             @else
                 <li>
-                    <a href="/register" class="hover:text-laravel"><i class="fa-solid fa-user-plus"></i> Regisztráció</a>
+                    <a href="/register" class="hover:text-cyan-600"><i class="fa-solid fa-user-plus"></i> Regisztráció</a>
                 </li>
                 <li>
-                    <a href="/login" class="hover:text-laravel"><i class="fa-solid fa-arrow-right-to-bracket"></i>
+                    <a href="/login" class="hover:text-cyan-600"><i class="fa-solid fa-arrow-right-to-bracket"></i>
                         Bejelentkezés</a>
                 </li>
             @endauth
