@@ -1,10 +1,10 @@
 @props(['survey'])
 
 <x-card>
-    <div class="flex h-36">
+    <div class="xxs:h-40 xs:h-36 md:h-auto flex">
         <img class="hidden w-48 mr-6 md:block" src="{{ asset('images/clipboard.png') }}" alt="" />
         <div>
-            <h2 class="text-2xl font-bold">
+            <h2 class="xs:text-sm md:text-2xl font-bold">
                 <a href="/surveys/{{ $survey->survey_id }}"> {{ $survey->cim }} </a>
             </h2>
             <div class="xxs: text-xl mb-3 md:text-xl mb-4"> {{ $survey->rovid_leiras }} </div>
