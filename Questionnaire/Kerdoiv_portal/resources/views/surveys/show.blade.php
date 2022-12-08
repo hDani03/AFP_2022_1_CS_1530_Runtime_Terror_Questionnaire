@@ -85,11 +85,12 @@
                     Kérdőív leadása
                 </button>
 
-                <a href="/" class="inline-block text-black ml-4 mb-4">
-                    <i class="bg-cyan-600 text-white rounded mt-10 py-2 px-4 mr-5 hover:bg-black">
-                        Vissza a főoldalra
-                    </i>
-                </a>
+                <button class="bg-cyan-600 text-white rounded mt-10 py-2 px-4 mr-5 hover:bg-black">
+                    <a href="/">
+                            Vissza a főoldalra
+                    </a>
+                </button>
+
             </form>
         </x-card>
 

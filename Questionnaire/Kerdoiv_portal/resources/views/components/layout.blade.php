@@ -46,7 +46,7 @@
                     <form class="inline hover:text-cyan-600" method="POST" action="/logout">
                         @csrf
                         <button type="submit">
-                            <i class="fa-solid fa-door-closed"></i> Kijelentkezés
+                            <i class="fa-solid fa-door-closed hover:fa-door-open"></i> Kijelentkezés
                         </button>
                     </form>
                 </li>
