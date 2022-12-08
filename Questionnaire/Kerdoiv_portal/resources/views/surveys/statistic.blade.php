@@ -79,7 +79,17 @@
             </x-card>
         </div>
     @else
-        <h1>Nem lett még kitöltve ez a kérdőív, így nincs statisztikája</h1>
+    <div class="p-12align-middle flex flex-col items-center justify-center text-center">
+
+        <h1 class="align-middle align-center text-xl font-bold text-cyan-600 animate-bounce">Nem lett még kitöltve ez a kérdőív, így nincs statisztikája</h1>
+
+    </div>
+    <div class="bg-white flex space-x-12 p-12 justify-center items-center">
+        <div class="flex items-center justify-center space-x-4 animate-pulse">
+          <div class="w-6 h-6 bg-cyan-600 rounded-full"></div>
+          <div class="w-6 h-6 bg-cyan-600 rounded-full"></div>
+          <div class="w-6 h-6 bg-cyan-600 rounded-full"></div>
+        </div>
     
     @endif
 
