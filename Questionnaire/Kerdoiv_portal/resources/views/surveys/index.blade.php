@@ -14,7 +14,9 @@
                     <x-survey-card :survey='$survey' />
                 @endforeach
             @else
-                <p> Nem található kérdőív </p>
+            <div class="mt-28 p-12align-middle flex flex-col items-center justify-center text-center">
+                <p class="align-middle align-center text-xl font-bold text-cyan-600 animate-bounce">Nem található kérdőív</p>
+            </div>
             @endunless
         @else
             <x-survey-card :survey='$surveys' />
