@@ -17,3 +17,17 @@ Ebben a dokumentumban lesz felsorolva az elvégzett tesztek elvárásai és ered
 | A5 | 2022.12.08. | Kérdőív kitöltésénél a "Vissza a főoldalra" gomb megfelelően működik | Az elvárásnak megfelel | Nincs |
 
 Az Alfa tesztelés során a vizsgált elemek mind hibátlanul működtek mindenféle fennakadások nélkül.
+
+
+Következő tesztelésnél a többi funkció kerül vizsgálatra illetve elemzésre.
+## Béta teszt
+
+| Vizsgálat | Tesztelés időpontja | Elvárás | Eredmény | Hibák |
+| :---: | --- | --- | --- | --- |
+| B1 | 2022.12.08. | Egyes hasonló elemek stílusa megegyezik | "A vissza a főoldalra" gomb stílusa eltért a többitől | A hiba javítva lett |
+| B2 | 2022.12.08. | A 'Kérdőív Portál' - KP logó a sarkoban mindig, minden oldalon a főoldalra visz | Az elvárásnak megfelelően működik | Nincs |
+| B3 | 2022.12.08. | A statisztikák csak admin felhasználók látják | A funkció megfelelően működik | Nincs |
+| B4 | 2022.12.08. | A statisztika %-os indikátorai megfelelően mutatják a kitöltöttségi arányokat | A funkció megfelelően működik | Nincs |
+| B5 | 2022.12.08. | Felhasználónév alapján nem különböztet meg felhasználókat, tehát több embernek is lehet ugyanaz a felhasználóneve | Az elvárásoknak megfelelően működik | Nincs |
+
+A Béta teszt során akadtan hibák, mely(ek) javításra szorulnak.
