@@ -94,6 +94,14 @@ ellenőrzése a rendszer által megvalósított üzleti szolgáltatások verifik
 A teszteléseket a fejlesztői csapat minden tagja elvégzi.
 Egy teszt eredményeit a tagok dokumentálják külön fájlokba.
 
+## 11. Telepítési terv
+Az oldal elindításához szükséges programok:
+    -XAMPP
+    -VS Code
+    -Node.js
+    -Laravel
+Első lépésben az XAMPP elindítása szükséges, ahol elindítjuk a Start gombbal az "Apache" és a "MySQL" funkciókat. Majd ezután megnyitjuk Visual Studio Code-ban a projektet, ahol létrehozunk egy új terminált, ahova a Node.js telepítése után a következőt írjuk: npm run dev
+Majd egy új terminált nyitva: php artisan serve    -    amit követően kapunk egy server liket, amelyet egy böngészőben megnyitunk, máris az oldal fogad.
 
 ## 12. Karbantartási terv
 Az alkalmazásunk mindig naprakész lesz, úgy ahogy a fejlesztői csapat is. Bármilyen hiba javításával vagy új funkciók bevezetésével kapcsolatos ügyekkel kereshetnek minket.
