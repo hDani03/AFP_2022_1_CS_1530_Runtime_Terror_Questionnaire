@@ -22,7 +22,9 @@
             @endphp
 
 
-            <form method="POST" action="/surveys/complete"
+
+
+                <form method="POST" action="/surveys/complete"
                 class="bg-gray-50 border border-gray-200 p-10 rounded max-w-3xl mx-auto mt-5">
                 @csrf
                 <div class="row grid grid-cols-10 gap-4">
